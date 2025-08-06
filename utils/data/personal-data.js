@@ -11,5 +11,5 @@ export const personalData = {
   linkedIn: 'https://mg.linkedin.com/in/marjean-claude-andriamahatradraide-65873b246',
   stackOverflow: '',
   devUsername: "C109",
-  resume: "https://drive.google.com/file/d/1qeqaymm_tZzq4mII60nRlG7_LoIM63df/view"
+  resume: "https://drive.google.com/drive/folders/1bZSKEpFVGjhjMegdoJvhYU-SPsUDjV89"
 }
