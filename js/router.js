@@ -59,7 +59,14 @@ class Router {
      * Gère le changement de route
      */
     handleRouteChange() {
-        const hash = window.location.hash || '#home';
+        let hash = window.location.hash || '#home';
+        
+        // Si aucun hash n'est présent (première visite), forcer #home
+        if (!window.location.hash) {
+            hash = '#home';
+            history.replaceState(null, null, hash);
+        }
+        
         const sectionId = hash.replace('#', '');
 
         // Mettre à jour la navigation active
@@ -101,13 +108,21 @@ class Router {
     scrollToSection(sectionId) {
         const section = document.getElementById(sectionId);
         if (section) {
-            const navHeight = document.getElementById('navbar').offsetHeight;
-            const sectionTop = section.offsetTop - navHeight - 20;
-            
-            window.scrollTo({
-                top: sectionTop,
-                behavior: 'smooth'
-            });
+            // Si c'est la section home, scroll tout en haut
+            if (sectionId === 'home') {
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+            } else {
+                const navHeight = document.getElementById('navbar').offsetHeight;
+                const sectionTop = section.offsetTop - navHeight - 20;
+                
+                window.scrollTo({
+                    top: sectionTop,
+                    behavior: 'smooth'
+                });
+            }
         }
     }
 
