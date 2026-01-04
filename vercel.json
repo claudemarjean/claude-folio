@@ -1,21 +1,7 @@
 {
-  "version": 2,
-  "routes": [
-    {
-      "src": "/css/(.*)",
-      "dest": "/css/$1"
-    },
-    {
-      "src": "/js/(.*)",
-      "dest": "/js/$1"
-    },
-    {
-      "src": "/assets/(.*)",
-      "dest": "/assets/$1"
-    },
-    {
-      "src": "/(.*)",
-      "dest": "/index.html"
-    }
-  ]
+  "buildCommand": null,
+  "devCommand": null,
+  "installCommand": null,
+  "framework": null,
+  "outputDirectory": "."
 }
