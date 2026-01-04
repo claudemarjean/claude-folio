@@ -1,0 +1,313 @@
+/**
+ * Application principale
+ * Initialise et coordonne tous les composants du portfolio
+ */
+
+class PortfolioApp {
+    constructor() {
+        this.init();
+    }
+
+    /**
+     * Initialise l'application
+     */
+    init() {
+        // Attendre que le DOM soit chargé
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', () => this.onDOMReady());
+        } else {
+            this.onDOMReady();
+        }
+    }
+
+    /**
+     * Exécuté quand le DOM est prêt
+     */
+    onDOMReady() {
+        // Masquer l'overlay de chargement
+        this.hideLoading();
+
+        // Initialiser les composants
+        initComponents();
+
+        // Initialiser les animations au scroll
+        setTimeout(() => initScrollAnimations(), 100);
+
+        // Initialiser les événements
+        this.initEvents();
+
+        // Initialiser la navbar
+        this.initNavbar();
+
+        // Initialiser le bouton scroll to top
+        this.initScrollToTop();
+
+        // Initialiser le formulaire de contact
+        this.initContactForm();
+
+        // Initialiser les interactions de l'image de profil
+        this.initProfileImageEffects();
+    }
+
+    /**
+     * Masque l'overlay de chargement
+     */
+    hideLoading() {
+        const loading = document.getElementById('loading');
+        if (loading) {
+            setTimeout(() => {
+                loading.style.opacity = '0';
+                setTimeout(() => {
+                    loading.style.display = 'none';
+                }, 300);
+            }, 500);
+        }
+    }
+
+    /**
+     * Initialise tous les événements
+     */
+    initEvents() {
+        // Gérer le redimensionnement de la fenêtre
+        let resizeTimeout;
+        window.addEventListener('resize', () => {
+            clearTimeout(resizeTimeout);
+            resizeTimeout = setTimeout(() => {
+                this.handleResize();
+            }, 250);
+        });
+
+        // Gérer le scroll
+        window.addEventListener('scroll', () => {
+            this.handleScroll();
+        });
+    }
+
+    /**
+     * Initialise la navigation
+     */
+    initNavbar() {
+        const navbar = document.getElementById('navbar');
+        const navToggle = document.getElementById('navToggle');
+        const navMenu = document.getElementById('navMenu');
+        const navLinks = document.querySelectorAll('.nav-link');
+
+        // Toggle du menu mobile
+        if (navToggle) {
+            navToggle.addEventListener('click', () => {
+                navMenu.classList.toggle('active');
+                navToggle.classList.toggle('active');
+                document.body.classList.toggle('nav-open');
+            });
+        }
+
+        // Fermer le menu au clic sur un lien
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                navMenu.classList.remove('active');
+                navToggle.classList.remove('active');
+                document.body.classList.remove('nav-open');
+            });
+        });
+
+        // Fermer le menu au clic en dehors
+        document.addEventListener('click', (e) => {
+            if (!navbar.contains(e.target) && navMenu.classList.contains('active')) {
+                navMenu.classList.remove('active');
+                navToggle.classList.remove('active');
+                document.body.classList.remove('nav-open');
+            }
+        });
+    }
+
+    /**
+     * Initialise le bouton scroll to top
+     */
+    initScrollToTop() {
+        const scrollToTopBtn = document.getElementById('scrollToTop');
+
+        if (scrollToTopBtn) {
+            scrollToTopBtn.addEventListener('click', () => {
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+            });
+        }
+    }
+
+    /**
+     * Initialise le formulaire de contact
+     */
+    initContactForm() {
+        const form = document.getElementById('contactForm');
+        const formMessage = document.getElementById('formMessage');
+
+        if (form) {
+            form.addEventListener('submit', (e) => {
+                e.preventDefault();
+
+                // Récupérer les données du formulaire
+                const formData = {
+                    name: form.name.value,
+                    email: form.email.value,
+                    subject: form.subject.value,
+                    message: form.message.value
+                };
+
+                // Simuler l'envoi du formulaire
+                this.handleFormSubmit(formData, form, formMessage);
+            });
+        }
+    }
+
+    /**
+     * Gère la soumission du formulaire
+     * @param {Object} formData - Les données du formulaire
+     * @param {HTMLFormElement} form - Le formulaire
+     * @param {HTMLElement} formMessage - L'élément pour afficher les messages
+     */
+    handleFormSubmit(formData, form, formMessage) {
+        // Afficher un message de chargement
+        formMessage.style.display = 'block';
+        formMessage.className = 'form-message loading';
+        formMessage.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Envoi en cours...';
+
+        // Simuler un délai d'envoi
+        setTimeout(() => {
+            // Créer le lien mailto
+            const mailtoLink = `mailto:${personalData.email}?subject=${encodeURIComponent(formData.subject)}&body=${encodeURIComponent(`Nom: ${formData.name}\nEmail: ${formData.email}\n\nMessage:\n${formData.message}`)}`;
+            
+            // Ouvrir le client mail
+            window.location.href = mailtoLink;
+
+            // Afficher un message de succès
+            formMessage.className = 'form-message success';
+            formMessage.innerHTML = '<i class="fas fa-check-circle"></i> Votre client mail va s\'ouvrir. Merci !';
+
+            // Réinitialiser le formulaire
+            form.reset();
+
+            // Masquer le message après 5 secondes
+            setTimeout(() => {
+                formMessage.style.display = 'none';
+            }, 5000);
+        }, 1000);
+    }
+
+    /**
+     * Active le passage de la photo du profil du noir et blanc à la couleur
+     */
+    initProfileImageEffects() {
+        const profileImg = document.querySelector('.profile-img');
+
+        if (!profileImg) return;
+
+        profileImg.setAttribute('tabindex', '0');
+
+        const toggleColor = () => {
+            profileImg.classList.toggle('is-colored');
+        };
+
+        profileImg.addEventListener('click', toggleColor);
+        profileImg.addEventListener('keydown', (event) => {
+            if (event.key === 'Enter' || event.key === ' ') {
+                event.preventDefault();
+                toggleColor();
+            }
+        });
+    }
+
+    /**
+     * Gère le scroll de la page
+     */
+    handleScroll() {
+        const navbar = document.getElementById('navbar');
+        const scrollToTopBtn = document.getElementById('scrollToTop');
+
+        // Ajouter une classe à la navbar si on a scrollé
+        if (window.scrollY > 50) {
+            navbar.classList.add('scrolled');
+        } else {
+            navbar.classList.remove('scrolled');
+        }
+
+        // Afficher/masquer le bouton scroll to top
+        if (window.scrollY > 300) {
+            scrollToTopBtn.classList.add('visible');
+        } else {
+            scrollToTopBtn.classList.remove('visible');
+        }
+    }
+
+    /**
+     * Gère le redimensionnement de la fenêtre
+     */
+    handleResize() {
+        // Fermer le menu mobile si on passe en desktop
+        if (window.innerWidth > 768) {
+            const navMenu = document.getElementById('navMenu');
+            const navToggle = document.getElementById('navToggle');
+            
+            navMenu.classList.remove('active');
+            navToggle.classList.remove('active');
+            document.body.classList.remove('nav-open');
+        }
+    }
+}
+
+// Initialiser l'application
+const app = new PortfolioApp();
+
+// Fonctions utilitaires globales
+window.utils = {
+    /**
+     * Debounce une fonction
+     * @param {Function} func - La fonction à debouncer
+     * @param {number} wait - Le délai en ms
+     * @returns {Function}
+     */
+    debounce(func, wait) {
+        let timeout;
+        return function executedFunction(...args) {
+            const later = () => {
+                clearTimeout(timeout);
+                func(...args);
+            };
+            clearTimeout(timeout);
+            timeout = setTimeout(later, wait);
+        };
+    },
+
+    /**
+     * Throttle une fonction
+     * @param {Function} func - La fonction à throttler
+     * @param {number} limit - Le délai en ms
+     * @returns {Function}
+     */
+    throttle(func, limit) {
+        let inThrottle;
+        return function(...args) {
+            if (!inThrottle) {
+                func.apply(this, args);
+                inThrottle = true;
+                setTimeout(() => inThrottle = false, limit);
+            }
+        };
+    },
+
+    /**
+     * Vérifie si un élément est visible dans le viewport
+     * @param {HTMLElement} element - L'élément à vérifier
+     * @returns {boolean}
+     */
+    isInViewport(element) {
+        const rect = element.getBoundingClientRect();
+        return (
+            rect.top >= 0 &&
+            rect.left >= 0 &&
+            rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+            rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+        );
+    }
+};

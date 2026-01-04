@@ -1,0 +1,27 @@
+# Netlify configuration
+# https://docs.netlify.com/configure-builds/file-based-configuration/
+
+[build]
+  # Directory to publish (default is the root)
+  publish = "."
+  
+  # No build command needed for static site
+  command = "echo 'No build step required'"
+
+[[redirects]]
+  # Redirect all 404s to index.html for SPA routing
+  from = "/*"
+  to = "/index.html"
+  status = 200
+
+[[headers]]
+  # Cache static assets
+  for = "/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  # Don't cache HTML
+  for = "/*.html"
+  [headers.values]
+    Cache-Control = "public, max-age=0, must-revalidate"
