@@ -275,9 +275,8 @@ function loadArticles() {
         });
     }
 
-    if (articlesData.length) {
-        showArticle(articlesData[0].id);
-    }
+    // Ne pas afficher automatiquement d'article au chargement
+    // L'utilisateur doit cliquer sur un article pour l'afficher
 }
 
 /**

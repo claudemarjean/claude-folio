@@ -7,6 +7,7 @@ class Router {
     constructor() {
         this.routes = {};
         this.currentSection = null;
+        this.isInitialLoad = true;
         this.init();
     }
 
@@ -28,6 +29,11 @@ class Router {
 
         // Charger la section initiale
         this.handleRouteChange();
+        
+        // Désactiver le flag après 1 seconde
+        setTimeout(() => {
+            this.isInitialLoad = false;
+        }, 1000);
     }
 
     /**
@@ -130,9 +136,24 @@ class Router {
      * Détecte la section visible au scroll
      */
     detectVisibleSection() {
+        // Ne pas détecter pendant le chargement initial
+        if (this.isInitialLoad) {
+            return;
+        }
+        
+        // Si on est tout en haut de la page, forcer home
+        if (window.scrollY < 100) {
+            if (this.currentSection !== 'home') {
+                this.currentSection = 'home';
+                history.replaceState(null, null, '#home');
+                this.updateActiveNavLink('#home');
+            }
+            return;
+        }
+        
         const sections = document.querySelectorAll('.section');
         const navHeight = document.getElementById('navbar').offsetHeight;
-        const scrollPosition = window.scrollY + navHeight + 100;
+        const scrollPosition = window.scrollY + navHeight + 200;
 
         sections.forEach(section => {
             const sectionTop = section.offsetTop;
