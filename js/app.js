@@ -27,26 +27,14 @@ class PortfolioApp {
         // Masquer l'overlay de chargement
         this.hideLoading();
 
-        // Initialiser les composants
-        initComponents();
-
-        // Initialiser les animations au scroll
+        applyLanguage(getCurrentLanguage());
         setTimeout(() => initScrollAnimations(), 100);
-
-        // Initialiser les événements
         this.initEvents();
-
-        // Initialiser la navbar
         this.initNavbar();
-
-        // Initialiser le bouton scroll to top
         this.initScrollToTop();
-
-        // Initialiser le formulaire de contact
         this.initContactForm();
-
-        // Initialiser les interactions de l'image de profil
         this.initProfileImageEffects();
+        initLanguageSwitcher();
     }
 
     /**
@@ -169,13 +157,18 @@ class PortfolioApp {
      */
     handleFormSubmit(formData, form, formMessage) {
         // Afficher un message de chargement
+        const lang = getCurrentLanguage();
+        const sendingText = lang === 'en' ? 'Sending...' : 'Envoi en cours...';
+        const successText = lang === 'en' ? 'Your mail client will open. Thank you!' : "Votre client mail va s'ouvrir. Merci !";
+
         formMessage.style.display = 'block';
         formMessage.className = 'form-message loading';
-        formMessage.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Envoi en cours...';
+        formMessage.innerHTML = `<i class="fas fa-spinner fa-spin"></i> ${sendingText}`;
 
         // Simuler un délai d'envoi
         setTimeout(() => {
             // Créer le lien mailto
+            const { personalData } = getCurrentData();
             const mailtoLink = `mailto:${personalData.email}?subject=${encodeURIComponent(formData.subject)}&body=${encodeURIComponent(`Nom: ${formData.name}\nEmail: ${formData.email}\n\nMessage:\n${formData.message}`)}`;
             
             // Ouvrir le client mail
@@ -183,7 +176,7 @@ class PortfolioApp {
 
             // Afficher un message de succès
             formMessage.className = 'form-message success';
-            formMessage.innerHTML = '<i class="fas fa-check-circle"></i> Votre client mail va s\'ouvrir. Merci !';
+            formMessage.innerHTML = `<i class="fas fa-check-circle"></i> ${successText}`;
 
             // Réinitialiser le formulaire
             form.reset();

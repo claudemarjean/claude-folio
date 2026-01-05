@@ -162,10 +162,10 @@ function createEducationCard(education) {
 /**
  * Charge et affiche tous les projets
  */
-function loadProjects() {
+function loadProjects(projects = []) {
     const projectsGrid = document.getElementById('projectsGrid');
     if (projectsGrid) {
-        projectsGrid.innerHTML = projectsData.map(project => 
+        projectsGrid.innerHTML = projects.map(project => 
             createProjectCard(project)
         ).join('');
     }
@@ -174,7 +174,7 @@ function loadProjects() {
 /**
  * Charge et affiche les articles
  */
-function loadArticles() {
+function loadArticles(articles = []) {
     const ticker = document.getElementById('articlesTicker');
     const articleDetail = document.getElementById('articleDetail');
     const detailTitle = document.getElementById('articleDetailTitle');
@@ -182,11 +182,11 @@ function loadArticles() {
     const detailImage = document.getElementById('articleDetailImage');
     const closeBtn = document.querySelector('.article-close');
 
-    if (!ticker || !articleDetail) return;
+    if (!ticker || !articleDetail || !articles.length) return;
 
-    const mid = Math.ceil(articlesData.length / 2);
-    const firstRow = articlesData.slice(0, mid);
-    const secondRow = articlesData.slice(mid);
+    const mid = Math.ceil(articles.length / 2);
+    const firstRow = articles.slice(0, mid);
+    const secondRow = articles.slice(mid);
 
     const renderRow = (items, direction) => `
         <div class="articles-row ${direction === 'right' ? 'reverse' : ''}">
@@ -249,7 +249,7 @@ function loadArticles() {
     });
 
     const showArticle = (articleId) => {
-        const article = articlesData.find(item => item.id === articleId);
+        const article = articles.find(item => item.id === articleId);
         if (!article) return;
         detailTitle.textContent = article.title;
         detailImage.src = article.image;
@@ -282,18 +282,16 @@ function loadArticles() {
 /**
  * Charge et affiche toutes les compétences
  */
-function loadSkills() {
+function loadSkills(skills = []) {
     const skillsGrid = document.getElementById('skillsGrid');
     if (!skillsGrid) return;
-    
-    // Diviser les compétences en deux groupes
-    const mid = Math.ceil(skillsData.length / 2);
-    const firstRow = skillsData.slice(0, mid);
-    const secondRow = skillsData.slice(mid);
-    
-    // Créer le HTML pour le défilement
+
+    const mid = Math.ceil(skills.length / 2);
+    const firstRow = skills.slice(0, mid);
+    const secondRow = skills.slice(mid);
+
     const scrollHTML = `
-        <div class="skills-scroll-wrapper">
+        <div class="skills-scroll-wrapper" id="skillsGrid">
             <div class="skills-row">
                 <div class="skills-track">
                     ${[...firstRow, ...firstRow].map(skill => createSkillCard(skill)).join('')}
@@ -306,18 +304,17 @@ function loadSkills() {
             </div>
         </div>
     `;
-    
-    // Remplacer le contenu de skillsGrid seulement
+
     skillsGrid.outerHTML = scrollHTML;
 }
 
 /**
  * Charge et affiche toutes les expériences
  */
-function loadExperiences() {
+function loadExperiences(experiencesList = []) {
     const experienceTimeline = document.getElementById('experienceTimeline');
     if (experienceTimeline) {
-        experienceTimeline.innerHTML = experiences.map((experience, index) => 
+        experienceTimeline.innerHTML = experiencesList.map((experience, index) => 
             createExperienceItem(experience, index)
         ).join('');
     }
@@ -326,10 +323,10 @@ function loadExperiences() {
 /**
  * Charge et affiche toutes les formations
  */
-function loadEducation() {
+function loadEducation(educationList = []) {
     const educationGrid = document.getElementById('educationGrid');
     if (educationGrid) {
-        educationGrid.innerHTML = educations.map(education => 
+        educationGrid.innerHTML = educationList.map(education => 
             createEducationCard(education)
         ).join('');
     }
@@ -338,12 +335,12 @@ function loadEducation() {
 /**
  * Initialise tous les composants
  */
-function initComponents() {
-    loadProjects();
-    loadArticles();
-    loadSkills();
-    loadExperiences();
-    loadEducation();
+function initComponents(data = {}) {
+    loadProjects(data.projectsData || []);
+    loadArticles(data.articlesData || []);
+    loadSkills(data.skillsData || []);
+    loadExperiences(data.experiences || []);
+    loadEducation(data.educations || []);
 }
 
 /**
