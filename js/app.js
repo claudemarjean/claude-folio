@@ -1,3 +1,63 @@
+const THEME_STORAGE_KEY = 'portfolio-theme';
+const prefersDarkScheme = window.matchMedia('(prefers-color-scheme: dark)');
+const savedTheme = localStorage.getItem(THEME_STORAGE_KEY);
+let currentTheme = savedTheme || (prefersDarkScheme.matches ? 'dark' : 'dark');
+
+document.documentElement.setAttribute('data-theme', currentTheme);
+
+function getThemeTexts() {
+    const lang = typeof getCurrentLanguage === 'function' ? getCurrentLanguage() : 'fr';
+    if (lang === 'en') {
+        return {
+            light: 'Light',
+            dark: 'Dark',
+            toLight: 'Switch to light mode',
+            toDark: 'Switch to dark mode'
+        };
+    }
+    return {
+        light: 'Clair',
+        dark: 'Sombre',
+        toLight: 'Passer en mode clair',
+        toDark: 'Passer en mode sombre'
+    };
+}
+
+function updateThemeToggleUI() {
+    const btn = document.getElementById('themeToggle');
+    if (!btn) return;
+    const icon = btn.querySelector('i');
+    const label = btn.querySelector('.theme-toggle__label');
+    const texts = getThemeTexts();
+    const isLight = currentTheme === 'light';
+    if (icon) icon.className = isLight ? 'fas fa-sun' : 'fas fa-moon';
+    if (label) label.textContent = isLight ? texts.light : texts.dark;
+    btn.setAttribute('aria-pressed', isLight);
+    btn.setAttribute('aria-label', isLight ? texts.toDark : texts.toLight);
+}
+
+function setTheme(theme) {
+    currentTheme = theme === 'light' ? 'light' : 'dark';
+    document.documentElement.setAttribute('data-theme', currentTheme);
+    localStorage.setItem(THEME_STORAGE_KEY, currentTheme);
+    updateThemeToggleUI();
+}
+
+function initThemeToggle() {
+    const btn = document.getElementById('themeToggle');
+    if (!btn) return;
+    updateThemeToggleUI();
+    btn.addEventListener('click', () => {
+        setTheme(currentTheme === 'dark' ? 'light' : 'dark');
+    });
+
+    prefersDarkScheme.addEventListener('change', (event) => {
+        if (!localStorage.getItem(THEME_STORAGE_KEY)) {
+            setTheme(event.matches ? 'dark' : 'light');
+        }
+    });
+}
+
 /**
  * Application principale
  * Initialise et coordonne tous les composants du portfolio
@@ -27,6 +87,7 @@ class PortfolioApp {
         // Masquer l'overlay de chargement
         this.hideLoading();
 
+        initThemeToggle();
         applyLanguage(getCurrentLanguage());
         setTimeout(() => initScrollAnimations(), 100);
         this.initEvents();

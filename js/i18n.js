@@ -329,6 +329,10 @@ function applyLanguage(lang = currentLanguage) {
     refreshDataDrivenSections(data);
     initScrollAnimations();
 
+    if (typeof updateThemeToggleUI === 'function') {
+        updateThemeToggleUI();
+    }
+
     // Mettre à jour les liens sociaux / contact
     const githubLinks = document.querySelectorAll('a[aria-label="GitHub"]');
     githubLinks.forEach(a => a.setAttribute('href', data.personalData.github));
