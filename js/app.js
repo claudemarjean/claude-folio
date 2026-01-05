@@ -1,3 +1,63 @@
+const THEME_STORAGE_KEY = 'portfolio-theme';
+const prefersDarkScheme = window.matchMedia('(prefers-color-scheme: dark)');
+const savedTheme = localStorage.getItem(THEME_STORAGE_KEY);
+let currentTheme = savedTheme || (prefersDarkScheme.matches ? 'dark' : 'dark');
+
+document.documentElement.setAttribute('data-theme', currentTheme);
+
+function getThemeTexts() {
+    const lang = typeof getCurrentLanguage === 'function' ? getCurrentLanguage() : 'fr';
+    if (lang === 'en') {
+        return {
+            light: 'Light',
+            dark: 'Dark',
+            toLight: 'Switch to light mode',
+            toDark: 'Switch to dark mode'
+        };
+    }
+    return {
+        light: 'Clair',
+        dark: 'Sombre',
+        toLight: 'Passer en mode clair',
+        toDark: 'Passer en mode sombre'
+    };
+}
+
+function updateThemeToggleUI() {
+    const btn = document.getElementById('themeToggle');
+    if (!btn) return;
+    const icon = btn.querySelector('i');
+    const label = btn.querySelector('.theme-toggle__label');
+    const texts = getThemeTexts();
+    const isLight = currentTheme === 'light';
+    if (icon) icon.className = isLight ? 'fas fa-sun' : 'fas fa-moon';
+    if (label) label.textContent = isLight ? texts.light : texts.dark;
+    btn.setAttribute('aria-pressed', isLight);
+    btn.setAttribute('aria-label', isLight ? texts.toDark : texts.toLight);
+}
+
+function setTheme(theme) {
+    currentTheme = theme === 'light' ? 'light' : 'dark';
+    document.documentElement.setAttribute('data-theme', currentTheme);
+    localStorage.setItem(THEME_STORAGE_KEY, currentTheme);
+    updateThemeToggleUI();
+}
+
+function initThemeToggle() {
+    const btn = document.getElementById('themeToggle');
+    if (!btn) return;
+    updateThemeToggleUI();
+    btn.addEventListener('click', () => {
+        setTheme(currentTheme === 'dark' ? 'light' : 'dark');
+    });
+
+    prefersDarkScheme.addEventListener('change', (event) => {
+        if (!localStorage.getItem(THEME_STORAGE_KEY)) {
+            setTheme(event.matches ? 'dark' : 'light');
+        }
+    });
+}
+
 /**
  * Application principale
  * Initialise et coordonne tous les composants du portfolio
@@ -27,26 +87,15 @@ class PortfolioApp {
         // Masquer l'overlay de chargement
         this.hideLoading();
 
-        // Initialiser les composants
-        initComponents();
-
-        // Initialiser les animations au scroll
+        initThemeToggle();
+        applyLanguage(getCurrentLanguage());
         setTimeout(() => initScrollAnimations(), 100);
-
-        // Initialiser les événements
         this.initEvents();
-
-        // Initialiser la navbar
         this.initNavbar();
-
-        // Initialiser le bouton scroll to top
         this.initScrollToTop();
-
-        // Initialiser le formulaire de contact
         this.initContactForm();
-
-        // Initialiser les interactions de l'image de profil
         this.initProfileImageEffects();
+        initLanguageSwitcher();
     }
 
     /**
@@ -169,13 +218,18 @@ class PortfolioApp {
      */
     handleFormSubmit(formData, form, formMessage) {
         // Afficher un message de chargement
+        const lang = getCurrentLanguage();
+        const sendingText = lang === 'en' ? 'Sending...' : 'Envoi en cours...';
+        const successText = lang === 'en' ? 'Your mail client will open. Thank you!' : "Votre client mail va s'ouvrir. Merci !";
+
         formMessage.style.display = 'block';
         formMessage.className = 'form-message loading';
-        formMessage.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Envoi en cours...';
+        formMessage.innerHTML = `<i class="fas fa-spinner fa-spin"></i> ${sendingText}`;
 
         // Simuler un délai d'envoi
         setTimeout(() => {
             // Créer le lien mailto
+            const { personalData } = getCurrentData();
             const mailtoLink = `mailto:${personalData.email}?subject=${encodeURIComponent(formData.subject)}&body=${encodeURIComponent(`Nom: ${formData.name}\nEmail: ${formData.email}\n\nMessage:\n${formData.message}`)}`;
             
             // Ouvrir le client mail
@@ -183,7 +237,7 @@ class PortfolioApp {
 
             // Afficher un message de succès
             formMessage.className = 'form-message success';
-            formMessage.innerHTML = '<i class="fas fa-check-circle"></i> Votre client mail va s\'ouvrir. Merci !';
+            formMessage.innerHTML = `<i class="fas fa-check-circle"></i> ${successText}`;
 
             // Réinitialiser le formulaire
             form.reset();
