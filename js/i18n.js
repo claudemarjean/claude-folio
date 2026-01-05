@@ -346,21 +346,21 @@ function applyLanguage(lang = currentLanguage) {
 }
 
 function highlightActiveLang() {
-    document.querySelectorAll('.lang-btn').forEach(btn => {
-        btn.classList.toggle('active', btn.dataset.lang === currentLanguage);
-    });
+    const btn = document.getElementById('langToggle');
+    if (!btn) return;
+    btn.textContent = currentLanguage.toUpperCase();
+    const nextLang = currentLanguage === 'fr' ? 'en' : 'fr';
+    const langText = currentLanguage === 'fr' ? 'Passer en anglais' : 'Switch to French';
+    btn.setAttribute('aria-label', langText);
+    btn.setAttribute('data-next-lang', nextLang);
 }
 
 function initLanguageSwitcher() {
-    const switcher = document.getElementById('langSwitcher');
-    if (!switcher) return;
-    switcher.addEventListener('click', (e) => {
-        const btn = e.target.closest('.lang-btn');
-        if (!btn) return;
-        const lang = btn.dataset.lang;
-        if (lang !== currentLanguage) {
-            setLanguage(lang);
-        }
+    const btn = document.getElementById('langToggle');
+    if (!btn) return;
+    btn.addEventListener('click', () => {
+        const next = btn.getAttribute('data-next-lang') || (currentLanguage === 'fr' ? 'en' : 'fr');
+        setLanguage(next);
     });
     highlightActiveLang();
 }
