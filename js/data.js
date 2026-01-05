@@ -94,6 +94,16 @@ const projectsData = [
     },
     {
         id: 8,
+        name: 'Score Karate',
+        description: "Développement d'une application pour l'affichage des scores de karaté lors de la compétition nationale.",
+        tools: ['Javascript ES6', 'Tailwind CSS'],
+        role: 'Développeur front-end',
+        code: '',
+        demo: 'https://score-karate.vercel.app/',
+        image: 'assets/images/projects/scoreKarate.jpg'
+    },
+    {
+        id: 9,
         name: 'Manao Paie (Paie Mada)',
         description: "Conception et développement d'un module de validation et diffusion des bulletins de paie, permettant une gestion efficace des employés et des déclarations fiscales, avec un outil intuitif pour les responsables RH.",
         tools: ['PHP', 'JavaScript', 'CodeIgniter', 'Bootstrap', 'MySQL'],
@@ -103,7 +113,7 @@ const projectsData = [
         image: 'assets/images/projects/Manao Paie.jpg'
     },
     {
-        id: 9,
+        id: 10,
         name: 'Manao Comptabilité',
         description: "Conception et développement d'un module de saisie comptable multi-devises avec gestion intégrée des pièces justificatives via GED. Optimisation de l'expérience utilisateur pour les écritures comptables, amélioration du suivi client, et mise en place d'un système de droits de communication pour faciliter la déclaration fiscale.",
         tools: ['Angular.js', 'CodeIgniter', 'Bootstrap'],
