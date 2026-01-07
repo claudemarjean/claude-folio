@@ -24,8 +24,23 @@ const TRACKING_CONFIG = {
     IP_SERVICE_URL: 'https://api.ipify.org?format=json',
     IP_GEOLOCATION_URL: 'https://ipapi.co',
     MAX_RETRIES: 3,
-    RETRY_DELAY: 1000 // ms
+    RETRY_DELAY: 1000, // ms
+    FETCH_TIMEOUT: 5000 // ms
 };
+
+/**
+ * Effectue un fetch avec timeout en utilisant AbortController
+ * @param {string} url - URL à requêter
+ * @param {number} timeout - Timeout en millisecondes
+ * @returns {Promise<Response>} Réponse de la requête
+ */
+function fetchWithTimeout(url, timeout = TRACKING_CONFIG.FETCH_TIMEOUT) {
+    const controller = new AbortController();
+    const timeoutId = setTimeout(() => controller.abort(), timeout);
+    
+    return fetch(url, { signal: controller.signal })
+        .finally(() => clearTimeout(timeoutId));
+}
 
 // ========================================
 // UTILITAIRES
@@ -71,10 +86,7 @@ function getOrCreateAnonymousSessionId() {
  */
 async function getClientIP() {
     try {
-        const response = await fetch(TRACKING_CONFIG.IP_SERVICE_URL, {
-            method: 'GET',
-            timeout: 5000
-        });
+        const response = await fetchWithTimeout(TRACKING_CONFIG.IP_SERVICE_URL);
         
         if (!response.ok) {
             throw new Error('Erreur lors de la récupération de l\'IP');
@@ -103,10 +115,7 @@ async function getGeoLocation(ipAddress) {
     }
     
     try {
-        const response = await fetch(`${TRACKING_CONFIG.IP_GEOLOCATION_URL}/${ipAddress}/json/`, {
-            method: 'GET',
-            timeout: 5000
-        });
+        const response = await fetchWithTimeout(`${TRACKING_CONFIG.IP_GEOLOCATION_URL}/${ipAddress}/json/`);
         
         if (!response.ok) {
             throw new Error('Erreur lors de la géolocalisation');
