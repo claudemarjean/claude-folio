@@ -352,6 +352,35 @@
     </div>
 
     <!-- JavaScript -->
+    <script src="assets/libs/supabase.js"></script>
+    <script src="assets/js/config.js"></script>
+    <script>
+        if (window.IVONY_CONFIG?.SUPABASE_URL && window.IVONY_CONFIG?.SUPABASE_ANON_KEY) {
+            window.supabaseClient = createClient(
+                IVONY_CONFIG.SUPABASE_URL,
+                IVONY_CONFIG.SUPABASE_ANON_KEY
+            );
+        } else {
+            console.warn('IVONY_CONFIG incomplet : SUPABASE_URL / SUPABASE_ANON_KEY manquants');
+        }
+    </script>
+    <script src="assets/js/tracking.js"></script>
+    <script src="assets/js/app-tracking.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', async () => {
+            const portfolioAppId = window.IVONY_CONFIG?.PORTFOLIO_APP_ID || '';
+            if (!portfolioAppId) {
+                console.warn('PORTFOLIO_APP_ID manquant dans IVONY_CONFIG');
+                return;
+            }
+
+            const result = await AppTracking.trackApplicationView(portfolioAppId, { source: 'page_load' });
+            if (!result.success) {
+                console.warn('Tracking portfolio échoué', result.error);
+            }
+        });
+    </script>
+
     <script src="js/data.js"></script>
     <script src="js/articles.js"></script>
     <script src="js/i18n.js"></script>
