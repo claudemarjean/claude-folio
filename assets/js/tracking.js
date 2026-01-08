@@ -140,52 +140,72 @@
 	}
 
 	async function trackConsultation(supabase, applicationId, options = {}) {
-		if (!supabase || typeof supabase.from !== 'function') {
-			return { success: false, error: 'Supabase client manquant' };
-		}
+    console.log('[IvonyTracking] Début du tracking...');
+    
+    if (!supabase || typeof supabase.from !== 'function') {
+      console.error('[IvonyTracking] Supabase client manquant ou invalide');
+      return { success: false, error: 'Supabase client manquant' };
+    }
 
-		if (!applicationId) {
-			return { success: false, error: 'applicationId manquant' };
-		}
+    if (!applicationId) {
+      console.error('[IvonyTracking] applicationId manquant');
+      return { success: false, error: 'applicationId manquant' };
+    }
 
-		try {
-			const { data: sessionData } = await supabase.auth.getSession();
-			const activeSession = sessionData?.session || null;
-			const isAuthenticated = Boolean(activeSession?.user?.id);
+    console.log('[IvonyTracking] Application ID:', applicationId);
 
-			const sessionId = isAuthenticated
-				? activeSession?.access_token || activeSession?.user?.id || getOrCreateSessionId()
-				: getOrCreateSessionId();
+    try {
+      const { data: sessionData } = await supabase.auth.getSession();
+      const activeSession = sessionData?.session || null;
+      const isAuthenticated = Boolean(activeSession?.user?.id);
 
-			const { deviceType, browser, os } = detectDevice();
-			const geo = await fetchIpData();
-			const isUnique = await isUniqueVisit(supabase, applicationId, sessionId);
+      console.log('[IvonyTracking] Authentifié:', isAuthenticated);
 
-			const payload = {
-				application_id: applicationId,
-				user_id: activeSession?.user?.id || null,
-				is_authenticated: isAuthenticated,
-				is_unique: isUnique,
-				session_id: sessionId,
-				ip_address: geo.ip_address,
-				country: geo.country,
-				region: geo.region,
-				city: geo.city,
-				browser,
-				os,
-				device_type: deviceType,
-				visited_at: new Date().toISOString(),
-				is_deleted: false
-			};
+      const sessionId = isAuthenticated
+        ? activeSession?.access_token || activeSession?.user?.id || getOrCreateSessionId()
+        : getOrCreateSessionId();
 
-			const result = await insertWithRetry(supabase, payload);
-			if (!result.success) {
-				return { success: false, error: result.error };
-			}
+      console.log('[IvonyTracking] Session ID:', sessionId);
 
-			return { success: true };
-		} catch (err) {
-			return { success: false, error: err?.message || err };
+      const { deviceType, browser, os } = detectDevice();
+      console.log('[IvonyTracking] Device info:', { deviceType, browser, os });
+      
+      const geo = await fetchIpData();
+      console.log('[IvonyTracking] Geo data:', geo);
+      
+      const isUnique = await isUniqueVisit(supabase, applicationId, sessionId);
+      console.log('[IvonyTracking] Visite unique:', isUnique);
+
+      const payload = {
+        application_id: applicationId,
+        user_id: activeSession?.user?.id || null,
+        is_authenticated: isAuthenticated,
+        is_unique: isUnique,
+        session_id: sessionId,
+        ip_address: geo.ip_address,
+        country: geo.country,
+        region: geo.region,
+        city: geo.city,
+        browser,
+        os,
+        device_type: deviceType,
+        visited_at: new Date().toISOString(),
+        is_deleted: false
+      };
+
+      console.log('[IvonyTracking] Payload:', payload);
+      console.log('[IvonyTracking] Envoi vers Supabase...');
+
+      const result = await insertWithRetry(supabase, payload);
+      if (!result.success) {
+        console.error('[IvonyTracking] Échec insertion:', result.error);
+        return { success: false, error: result.error };
+      }
+
+      console.log('[IvonyTracking] ✅ Données envoyées avec succès !');
+      return { success: true };
+    } catch (err) {
+      console.error('[IvonyTracking] Erreur:', err);
 		}
 	}
 

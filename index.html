@@ -356,10 +356,11 @@
     <script src="assets/js/config.js"></script>
     <script>
         if (window.IVONY_CONFIG?.SUPABASE_URL && window.IVONY_CONFIG?.SUPABASE_ANON_KEY) {
-            window.supabaseClient = createClient(
+            window.supabaseClient = supabase.createClient(
                 IVONY_CONFIG.SUPABASE_URL,
                 IVONY_CONFIG.SUPABASE_ANON_KEY
             );
+            console.log('Supabase client initialisé avec succès');
         } else {
             console.warn('IVONY_CONFIG incomplet : SUPABASE_URL / SUPABASE_ANON_KEY manquants');
         }
@@ -368,15 +369,23 @@
     <script src="assets/js/app-tracking.js"></script>
     <script>
         document.addEventListener('DOMContentLoaded', async () => {
+            console.log('Début du tracking portfolio...');
+            
             const portfolioAppId = window.IVONY_CONFIG?.PORTFOLIO_APP_ID || '';
             if (!portfolioAppId) {
                 console.warn('PORTFOLIO_APP_ID manquant dans IVONY_CONFIG');
                 return;
             }
 
+            console.log('Application ID:', portfolioAppId);
+            console.log('AppTracking disponible:', typeof window.AppTracking);
+            console.log('supabaseClient disponible:', typeof window.supabaseClient);
+
             const result = await AppTracking.trackApplicationView(portfolioAppId, { source: 'page_load' });
             if (!result.success) {
-                console.warn('Tracking portfolio échoué', result.error);
+                console.error('Tracking portfolio échoué:', result.error);
+            } else {
+                console.log('✅ Tracking réussi !');
             }
         });
     </script>
