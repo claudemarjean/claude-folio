@@ -8,7 +8,7 @@ Cette note décrit comment envoyer, depuis un portfolio statique sans authentifi
 - **Module cœur tracking** : `assets/js/tracking.js` expose `window.IvonyTracking` avec la fonction clé `trackConsultation(supabase, applicationId, options?)`. Ce module :
   - crée / persiste un `session_id` anonyme (UUID localStorage) ;
   - vérifie la session Supabase (`supabase.auth.getSession()`) pour savoir si le visiteur est authentifié ;
-  - récupère IP (`api.ipify.org`) puis géoloc (ipapi.co) ;
+  - récupère la géoloc via ipapi (auto `/json`), puis retente avec ipify + ipapi si besoin ; accepte un override manuel `options.geo` ;
   - collecte `browser`, `os`, `device_type` ;
   - vérifie l’unicité de la visite par couple `(application_id, session_id)` ;
   - insère dans `ivony_consultation` avec retry (3 tentatives).
@@ -73,6 +73,7 @@ Pour tracker le chargement de la page portfolio (sans authentification) vers `iv
 Notes :
 - `trackApplicationView` vérifie `IvonyTracking` et `supabaseClient` puis délègue à `trackConsultation`.
 - Si le visiteur est anonyme, `session_id` est persisté en localStorage pour conserver l’unicité.
+- Vous pouvez forcer des données de géoloc connues (ex. côté serveur) via `AppTracking.trackApplicationView(appId, { geo: { ip_address, country, region, city } })`.
 
 ## Tracking automatique des clics (optionnel)
 

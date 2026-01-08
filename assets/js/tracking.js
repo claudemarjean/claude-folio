@@ -6,6 +6,16 @@
 	const IPIFY_URL = 'https://api.ipify.org?format=json';
 	const IPAPI_URL = 'https://ipapi.co';
 	const MAX_RETRY = 3;
+	const EMPTY_GEO = { ip_address: null, country: null, region: null, city: null };
+
+	function normalizeGeo(raw = {}) {
+		return {
+			ip_address: raw.ip_address || raw.ip || null,
+			country: raw.country || raw.country_name || null,
+			region: raw.region || raw.region_name || null,
+			city: raw.city || null
+		};
+	}
 
 	function uuid() {
 		if (typeof crypto !== 'undefined' && crypto.randomUUID) {
@@ -70,33 +80,56 @@
 		return { deviceType, browser, os };
 	}
 
-	async function fetchIpData() {
+	async function fetchIpData(overrideGeo) {
+		const provided = normalizeGeo(overrideGeo);
+		if (provided.ip_address || provided.country || provided.region || provided.city) {
+			return provided;
+		}
+
+		try {
+			const autoRes = await fetch(`${IPAPI_URL}/json/`);
+			const autoJson = await autoRes.json();
+			const autoGeo = normalizeGeo({
+				ip_address: autoJson?.ip,
+				country: autoJson?.country_name,
+				region: autoJson?.region,
+				city: autoJson?.city
+			});
+
+			if (autoGeo.ip_address || autoGeo.country || autoGeo.region || autoGeo.city) {
+				return autoGeo;
+			}
+		} catch (err) {
+			console.warn('IvonyTracking: géoloc auto ipapi échouée', err);
+		}
+
 		try {
 			const ipRes = await fetch(IPIFY_URL);
 			const ipJson = await ipRes.json();
 			const ip = ipJson?.ip || null;
 
 			if (!ip) {
-				return { ip_address: null, country: null, region: null, city: null };
+				return EMPTY_GEO;
 			}
 
 			try {
 				const geoRes = await fetch(`${IPAPI_URL}/${ip}/json/`);
 				const geoJson = await geoRes.json();
-				return {
+				return normalizeGeo({
 					ip_address: ip,
-					country: geoJson?.country_name || null,
-					region: geoJson?.region || null,
-					city: geoJson?.city || null
-				};
+					country: geoJson?.country_name,
+					region: geoJson?.region,
+					city: geoJson?.city
+				});
 			} catch (geoError) {
-				console.warn('IvonyTracking: géoloc non disponible', geoError);
-				return { ip_address: ip, country: null, region: null, city: null };
+				console.warn('IvonyTracking: géoloc par IP échouée', geoError);
+				return { ...EMPTY_GEO, ip_address: ip };
 			}
 		} catch (err) {
 			console.warn('IvonyTracking: IP non récupérée', err);
-			return { ip_address: null, country: null, region: null, city: null };
 		}
+
+		return EMPTY_GEO;
 	}
 
 	async function isUniqueVisit(supabase, applicationId, sessionId) {
@@ -167,10 +200,10 @@
 
       console.log('[IvonyTracking] Session ID:', sessionId);
 
-      const { deviceType, browser, os } = detectDevice();
+			const { deviceType, browser, os } = detectDevice();
       console.log('[IvonyTracking] Device info:', { deviceType, browser, os });
       
-      const geo = await fetchIpData();
+			const geo = await fetchIpData(options.geo);
       console.log('[IvonyTracking] Geo data:', geo);
       
       const isUnique = await isUniqueVisit(supabase, applicationId, sessionId);
