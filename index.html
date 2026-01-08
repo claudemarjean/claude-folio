@@ -352,6 +352,44 @@
     </div>
 
     <!-- JavaScript -->
+    <script src="assets/libs/supabase.js"></script>
+    <script src="assets/js/config.js"></script>
+    <script>
+        if (window.IVONY_CONFIG?.SUPABASE_URL && window.IVONY_CONFIG?.SUPABASE_ANON_KEY) {
+            window.supabaseClient = supabase.createClient(
+                IVONY_CONFIG.SUPABASE_URL,
+                IVONY_CONFIG.SUPABASE_ANON_KEY
+            );
+            console.log('Supabase client initialisé avec succès');
+        } else {
+            console.warn('IVONY_CONFIG incomplet : SUPABASE_URL / SUPABASE_ANON_KEY manquants');
+        }
+    </script>
+    <script src="assets/js/tracking.js"></script>
+    <script src="assets/js/app-tracking.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', async () => {
+            console.log('Début du tracking portfolio...');
+            
+            const portfolioAppId = window.IVONY_CONFIG?.PORTFOLIO_APP_ID || '';
+            if (!portfolioAppId) {
+                console.warn('PORTFOLIO_APP_ID manquant dans IVONY_CONFIG');
+                return;
+            }
+
+            console.log('Application ID:', portfolioAppId);
+            console.log('AppTracking disponible:', typeof window.AppTracking);
+            console.log('supabaseClient disponible:', typeof window.supabaseClient);
+
+            const result = await AppTracking.trackApplicationView(portfolioAppId, { source: 'page_load' });
+            if (!result.success) {
+                console.error('Tracking portfolio échoué:', result.error);
+            } else {
+                console.log('✅ Tracking réussi !');
+            }
+        });
+    </script>
+
     <script src="js/data.js"></script>
     <script src="js/articles.js"></script>
     <script src="js/i18n.js"></script>
@@ -359,54 +397,5 @@
     <script src="js/components.js"></script>
     <script src="js/app.js"></script>
 
-    <!-- ========================================
-         TRACKING IVONY - NE PAS MODIFIER
-         ======================================== -->
-    
-    <!-- Supabase JS -->
-    <script src="assets/libs/supabase.js"></script>
-    
-    <!-- Module de tracking -->
-    <script src="assets/js/tracking.js"></script>
-    
-    <!-- Configuration du tracking -->
-    <script>
-        // ========================================
-        // CONFIGURATION SUPABASE
-        // ========================================
-        const SUPABASE_URL = 'https://jzabkrztgkayunjbzlzj.supabase.co';
-        const SUPABASE_ANON_KEY = 'sb_publishable_6KKGLI74VNMAnzbGkk6xew_ZZv3QyJu';
-        
-        // Initialiser le client Supabase
-        const supabaseClient = supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
-        
-        // ========================================
-        // TRACKING AUTOMATIQUE
-        // ========================================
-        const PORTFOLIO_APP_ID = '00da2367-d90d-4735-8f42-cf99adebf881';
-        
-        // Tracker la visite au chargement de la page
-        document.addEventListener('DOMContentLoaded', async () => {
-            console.log('📊 Initialisation du tracking portfolio...');
-            
-            try {
-                const result = await IvonyTracking.trackConsultation(
-                    supabaseClient,
-                    PORTFOLIO_APP_ID
-                );
-                
-                if (result.success) {
-                    console.log('✅ Visite enregistrée:', result.data);
-                    console.log('📍 Localisation:', result.data.city, result.data.country);
-                    console.log('📱 Appareil:', result.data.device_type);
-                    console.log('🆔 Session:', result.data.session_id);
-                } else {
-                    console.warn('⚠️ Tracking échoué:', result.error);
-                }
-            } catch (error) {
-                console.error('❌ Erreur tracking:', error);
-            }
-        });
-    </script>
 </body>
 </html>
