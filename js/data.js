@@ -17,7 +17,7 @@ const personalData = {
     linkedIn: 'https://mg.linkedin.com/in/marjean-claude-andriamahatradraide-65873b246',
     stackOverflow: '',
     devUsername: "C109",
-    resume: "https://drive.google.com/file/d/1qeqaymm_tZzq4mII60nRlG7_LoIM63df/view"
+    resume: "https://drive.google.com/file/d/1K-j9cRFQZBtzVseUs8rmpNELJz-HEBl5/view?usp=sharing"
 };
 
 // Projets
@@ -152,66 +152,74 @@ const skillsData = [
 const experiences = [
     {
         id: 1,
-        title: 'Directeur Adjoint au Développement',
-        company: "MANAO Logiciels",
-        duration: "(Jan 2024 - Présent)",
-        location: "Madagascar",
-        description: "Direction et coordination des équipes de développement, gestion de projets stratégiques et innovation technologique."
+        title: 'Directeur du développement',
+        company: 'MANAO Logiciels',
+        duration: '(Jan 2026 - Présent)',
+        location: 'Madagascar',
+        description: "Pilotage de la stratégie de développement, arbitrage technologique, supervision des architectures et accompagnement des équipes projets et techniques."
     },
     {
         id: 2,
-        title: "Responsable Informatique",
-        company: "AFAMITA (alternance)",
-        duration: "(Nov 2020 - Présent)",
-        location: "Madagascar",
-        description: "Gestion du système d’information, des plateformes de transfert monétaire et du support technique."
+        title: 'Directeur Adjoint au Développement',
+        company: 'MANAO Logiciels',
+        duration: '(Jan 2024 - Déc 2025)',
+        location: 'Madagascar',
+        description: "Direction et coordination des équipes de développement, gestion de projets stratégiques et innovation technologique."
     },
     {
         id: 3,
-        title: "Webmaster/Développeur",
-        company: "AB Air Support (freelance)",
-        duration: "(Mars 2025)",
-        location: "Remote",
-        description: "Développement et déploiement d'une page vitrine professionnelle B2B."
+        title: 'Responsable Informatique',
+        company: 'AFAMITA (alternance)',
+        duration: '(Nov 2020 - Présent)',
+        location: 'Madagascar',
+        description: "Gestion du système d’information, des plateformes de transfert monétaire et du support technique."
     },
     {
         id: 4,
-        title: "Auditeur en assistance du SI",
-        company: "-",
-        duration: "(Décembre 2024)",
-        location: "Madagascar",
-        description: "Audit et évaluation des systèmes d'information."
+        title: 'Webmaster/Développeur',
+        company: 'AB Air Support (freelance)',
+        duration: '(Mars 2025)',
+        location: 'Remote',
+        description: "Développement et déploiement d'une page vitrine professionnelle B2B."
     },
     {
         id: 5,
-        title: "Webmaster/Développeur",
-        company: "ExtraToo (freelance)",
-        duration: "(Juillet 2024 - Août 2024)",
-        location: "Remote",
-        description: "Maintenance et amélioration du site vitrine de produits Mactoo."
+        title: 'Auditeur en assistance du SI',
+        company: '-',
+        duration: '(Décembre 2024)',
+        location: 'Madagascar',
+        description: "Audit et évaluation des systèmes d'information."
     },
     {
         id: 6,
-        title: "Chef de projet en développement",
-        company: "MANAO Logiciels",
-        duration: "(Juillet 2023 - Janvier 2024)",
-        location: "Madagascar",
-        description: "Gestion et coordination de projets de développement logiciel."
+        title: 'Webmaster/Développeur',
+        company: 'ExtraToo (freelance)',
+        duration: '(Juillet 2024 - Août 2024)',
+        location: 'Remote',
+        description: "Maintenance et amélioration du site vitrine de produits Mactoo."
     },
     {
         id: 7,
-        title: "Développeur Web Full Stack (PHP-JS)",
-        company: "MANAO Logiciels",
-        duration: "(Avril 2022 - Juin 2023)",
-        location: "Madagascar",
-        description: "Développement d'applications web complètes avec PHP et JavaScript."
+        title: 'Chef de projet en développement',
+        company: 'MANAO Logiciels',
+        duration: '(Juillet 2023 - Janvier 2024)',
+        location: 'Madagascar',
+        description: "Gestion et coordination de projets de développement logiciel."
     },
     {
         id: 8,
-        title: "Stages professionnels significatifs",
-        company: "-",
-        duration: "",
-        location: "",
+        title: 'Développeur Web Full Stack (PHP-JS)',
+        company: 'MANAO Logiciels',
+        duration: '(Avril 2022 - Juin 2023)',
+        location: 'Madagascar',
+        description: "Développement d'applications web complètes avec PHP et JavaScript."
+    },
+    {
+        id: 9,
+        title: 'Stages professionnels significatifs',
+        company: '-',
+        duration: '',
+        location: '',
         description: "Stages techniques et fonctionnels ayant permis l’acquisition de solides bases en développement logiciel, systèmes d’information et gestion de projets IT."
     }
 ];

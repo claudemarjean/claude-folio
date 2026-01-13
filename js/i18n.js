@@ -21,7 +21,7 @@ const portfolioData = {
             github: 'https://github.com/claudemarjean',
             facebook: 'https://web.facebook.com/claude.marjean/',
             linkedIn: 'https://mg.linkedin.com/in/marjean-claude-andriamahatradraide-65873b246',
-            resume: 'https://drive.google.com/file/d/1qeqaymm_tZzq4mII60nRlG7_LoIM63df/view'
+            resume: 'https://drive.google.com/file/d/1BfVFq_7BdrepESi-xtb1nBBwQZX7fvQq/view?usp=sharing'
         },
         about: {
             paragraphs: [
@@ -43,30 +43,124 @@ const portfolioData = {
         ],
         skillsData: ['Angular','Bootstrap','CSS','Docker','Firebase','Flutter','Git','HTML','Javascript','MySQL','Next JS','Photoshop','PostgreSQL','Premiere Pro','Python','React','Tailwind','Typescript','Vue','Wordpress'],
         experiences: [
-            { id: 1, title: 'Directeur Adjoint au Développement', company: 'MANAO Logiciels', duration: '(Jan 2024 - Présent)', location: 'Madagascar', description: 'Direction et coordination des équipes de développement, gestion de projets stratégiques et innovation technologique.' },
-            { id: 2, title: 'Responsable Informatique', company: 'AFAMITA (alternance)', duration: '(Nov 2020 - Présent)', location: 'Madagascar', description: "Gestion du système d’information, des plateformes de transfert monétaire et du support technique." },
-            { id: 3, title: 'Webmaster/Développeur', company: 'AB Air Support (freelance)', duration: '(Mars 2025)', location: 'Remote', description: "Développement et déploiement d'une page vitrine professionnelle B2B." },
-            { id: 4, title: 'Auditeur en assistance du SI', company: '-', duration: '(Décembre 2024)', location: 'Madagascar', description: "Audit et évaluation des systèmes d'information." },
-            { id: 5, title: 'Webmaster/Développeur', company: 'ExtraToo (freelance)', duration: '(Juillet 2024 - Août 2024)', location: 'Remote', description: 'Maintenance et amélioration du site vitrine de produits Mactoo.' },
-            { id: 6, title: 'Chef de projet en développement', company: 'MANAO Logiciels', duration: '(Juillet 2023 - Janvier 2024)', location: 'Madagascar', description: 'Gestion et coordination de projets de développement logiciel.' },
-            { id: 7, title: 'Développeur Web Full Stack (PHP-JS)', company: 'MANAO Logiciels', duration: '(Avril 2022 - Juin 2023)', location: 'Madagascar', description: "Développement d'applications web complètes avec PHP et JavaScript." },
-            { id: 8, title: 'Stages professionnels significatifs', company: '-', duration: '', location: '', description: "Stages techniques et fonctionnels ayant permis l’acquisition de solides bases en développement logiciel, systèmes d’information et gestion de projets IT." }
+            { id: 1, title: 'Directeur du développement', company: 'MANAO Logiciels', duration: '(Jan 2026 - Présent)', location: 'Madagascar', description: 'Pilotage de la stratégie de développement, arbitrage technologique, supervision des architectures et accompagnement des équipes projets et techniques.' },
+            { id: 2, title: 'Directeur Adjoint au Développement', company: 'MANAO Logiciels', duration: '(Jan 2024 - Déc 2025)', location: 'Madagascar', description: 'Direction et coordination des équipes de développement, gestion de projets stratégiques et innovation technologique.' },
+            { id: 3, title: 'Responsable Informatique', company: 'AFAMITA (alternance)', duration: '(Nov 2020 - Présent)', location: 'Madagascar', description: "Gestion du système d’information, des plateformes de transfert monétaire et du support technique." },
+            { id: 4, title: 'Webmaster/Développeur', company: 'AB Air Support (freelance)', duration: '(Mars 2025)', location: 'Remote', description: "Développement et déploiement d'une page vitrine professionnelle B2B." },
+            { id: 5, title: 'Auditeur en assistance du SI', company: '-', duration: '(Décembre 2024)', location: 'Madagascar', description: "Audit et évaluation des systèmes d'information." },
+            { id: 6, title: 'Webmaster/Développeur', company: 'ExtraToo (freelance)', duration: '(Juillet 2024 - Août 2024)', location: 'Remote', description: 'Maintenance et amélioration du site vitrine de produits Mactoo.' },
+            { id: 7, title: 'Chef de projet en développement', company: 'MANAO Logiciels', duration: '(Juillet 2023 - Janvier 2024)', location: 'Madagascar', description: 'Gestion et coordination de projets de développement logiciel.' },
+            { id: 8, title: 'Développeur Web Full Stack (PHP-JS)', company: 'MANAO Logiciels', duration: '(Avril 2022 - Juin 2023)', location: 'Madagascar', description: "Développement d'applications web complètes avec PHP et JavaScript." },
+            { id: 9, title: 'Stages professionnels significatifs', company: '-', duration: '', location: '', description: "Stages techniques et fonctionnels ayant permis l’acquisition de solides bases en développement logiciel, systèmes d’information et gestion de projets IT." }
         ],
         educations: [
             { id: 1, title: 'Master 2', duration: '2021 - 2022', institution: "École Nationale D'Informatique", location: 'Madagascar', description: 'Master en Informatique avec spécialisation en développement logiciel' },
             { id: 2, title: 'Licence', duration: '2019 - 2020', institution: "École Nationale D'Informatique", location: 'Madagascar', description: 'Licence en Informatique' }
         ],
         articlesData: [
-            { id: 'article-1', title: "Pourquoi tant de projets informatiques échouent avant même la première ligne de code", image: 'assets/images/articles/projets informatiques echouent.png', excerpt: "Pourquoi tant de projets informatiques échouent avant même la première ligne de code", body: ['De nombreux projets sont fragilisés bien avant le démarrage du développement.', 'L’échec prend souvent racine dans la phase de cadrage initial.', 'Les objectifs sont imprécis, les priorités mal hiérarchisées et les contraintes métier sous-estimées.', 'Le besoin réel est rarement formalisé de manière exploitable.', 'Les choix techniques arrivent trop tôt, sans vision globale ni scénario d’évolution.', 'Le périmètre évolue sans règles claires, créant des attentes contradictoires.', 'Le projet progresse, mais sans direction stable.', 'Le code devient alors une tentative d’adaptation permanente.', 'Ce n’est pas un problème de compétences techniques, mais de décisions amont.', 'Un projet bien cadré réduit les risques avant même d’écrire la première ligne de code.'] },
-            { id: 'article-2', title: "Le vrai problème d'un projet n'est presque jamais technique", image: 'assets/images/articles/placeholder.svg', excerpt: "Le vrai problème d'un projet n'est presque jamais technique", body: ["Le vrai problème d'un projet n'est presque jamais technique"] },
-            { id: 'article-3', title: 'Ce que les cahiers des charges oublient systématiquement', image: 'assets/images/articles/placeholder.svg', excerpt: 'Ce que les cahiers des charges oublient systématiquement', body: ['Ce que les cahiers des charges oublient systématiquement'] },
-            { id: 'article-4', title: 'Les décisions non techniques qui sabotent un projet IT', image: 'assets/images/articles/placeholder.svg', excerpt: 'Les décisions non techniques qui sabotent un projet IT', body: ['Les décisions non techniques qui sabotent un projet IT'] },
-            { id: 'article-5', title: 'La dette technique ne commence pas dans le code', image: 'assets/images/articles/placeholder.svg', excerpt: 'La dette technique ne commence pas dans le code', body: ['La dette technique ne commence pas dans le code'] },
-            { id: 'article-6', title: "PHP n'est pas le problème, son utilisation l'est", image: 'assets/images/articles/placeholder.svg', excerpt: "PHP n'est pas le problème, son utilisation l'est", body: ["PHP n'est pas le problème, son utilisation l'est"] },
-            { id: 'article-7', title: "JavaScript devient dangereux quand il n'est pas structuré", image: 'assets/images/articles/placeholder.svg', excerpt: "JavaScript devient dangereux quand il n'est pas structuré", body: ["JavaScript devient dangereux quand il n'est pas structuré"] },
-            { id: 'article-8', title: "Séparer le front et le back n'est pas une option", image: 'assets/images/articles/placeholder.svg', excerpt: "Séparer le front et le back n'est pas une option", body: ["Séparer le front et le back n'est pas une option"] },
-            { id: 'article-9', title: 'La sécurité web est souvent prise trop tard', image: 'assets/images/articles/placeholder.svg', excerpt: 'La sécurité web est souvent prise trop tard', body: ['La sécurité web est souvent prise trop tard'] },
-            { id: 'article-10', title: "Une application lente coûte plus qu'on ne le pense", image: 'assets/images/articles/placeholder.svg', excerpt: "Une application lente coûte plus qu'on ne le pense", body: ["Une application lente coûte plus qu'on ne le pense"] }
+            {
+                id: 'article-1',
+                title: "Pourquoi tant de projets informatiques échouent avant même la première ligne de code",
+                image: 'assets/images/articles/projets informatiques echouent.png',
+                excerpt: "Pourquoi tant de projets informatiques échouent avant même la première ligne de code",
+                category: 'Gouvernance produit',
+                date: '2025-12-10',
+                body: ['De nombreux projets sont fragilisés bien avant le démarrage du développement.', 'L’échec prend souvent racine dans la phase de cadrage initial.', 'Les objectifs sont imprécis, les priorités mal hiérarchisées et les contraintes métier sous-estimées.', 'Le besoin réel est rarement formalisé de manière exploitable.', 'Les choix techniques arrivent trop tôt, sans vision globale ni scénario d’évolution.', 'Le périmètre évolue sans règles claires, créant des attentes contradictoires.', 'Le projet progresse, mais sans direction stable.', 'Le code devient alors une tentative d’adaptation permanente.', 'Ce n’est pas un problème de compétences techniques, mais de décisions amont.', 'Un projet bien cadré réduit les risques avant même d’écrire la première ligne de code.']
+            },
+            {
+                id: 'article-2',
+                title: 'Ce qui fait réellement démarrer un projet IT sur de bonnes bases',
+                image: 'assets/images/articles/demarrer-un-projet-ITsur-de-bonnes-bases.png',
+                excerpt: 'Ce qui fait réellement démarrer un projet IT sur de bonnes bases',
+                category: 'Pilotage projet',
+                date: '2026-01-13',
+                body: [
+                    'Un projet IT démarre avant tout par une compréhension partagée.',
+                    'Tout commence par une définition claire du problème à résoudre.',
+                    'Les objectifs doivent être compréhensibles, mesurables et alignés entre les parties prenantes.',
+                    'Le besoin métier gagne à être traduit en exigences concrètes et priorisées.',
+                    'Un démarrage solide repose sur un périmètre défini et maîtrisé.',
+                    'Les contraintes doivent être identifiées dès le départ.',
+                    'Les rôles et responsabilités doivent être clairement établis.',
+                    'Les décisions efficaces s’appuient sur des éléments factuels.',
+                    'La vision produit guide les choix techniques.',
+                    'La technologie intervient comme un outil au service de cette vision.',
+                    'Un cadrage structuré facilite les arbitrages et sécurise l’exécution.',
+                    'Il améliore durablement la qualité du projet.'
+                ]
+            },
+            {
+                id: 'article-3',
+                title: 'Ce que les cahiers des charges oublient systématiquement',
+                image: 'assets/images/articles/placeholder.svg',
+                excerpt: 'Ce que les cahiers des charges oublient systématiquement',
+                category: 'Cadrage',
+                date: '2025-10-02',
+                body: ['Ce que les cahiers des charges oublient systématiquement']
+            },
+            {
+                id: 'article-4',
+                title: 'Les décisions non techniques qui sabotent un projet IT',
+                image: 'assets/images/articles/placeholder.svg',
+                excerpt: 'Les décisions non techniques qui sabotent un projet IT',
+                category: 'Management',
+                date: '2025-09-12',
+                body: ['Les décisions non techniques qui sabotent un projet IT']
+            },
+            {
+                id: 'article-5',
+                title: 'La dette technique ne commence pas dans le code',
+                image: 'assets/images/articles/placeholder.svg',
+                excerpt: 'La dette technique ne commence pas dans le code',
+                category: 'Qualité',
+                date: '2025-08-18',
+                body: ['La dette technique ne commence pas dans le code']
+            },
+            {
+                id: 'article-6',
+                title: "PHP n'est pas le problème, son utilisation l'est",
+                image: 'assets/images/articles/placeholder.svg',
+                excerpt: "PHP n'est pas le problème, son utilisation l'est",
+                category: 'Architecture',
+                date: '2025-07-05',
+                body: ["PHP n'est pas le problème, son utilisation l'est"]
+            },
+            {
+                id: 'article-7',
+                title: "JavaScript devient dangereux quand il n'est pas structuré",
+                image: 'assets/images/articles/placeholder.svg',
+                excerpt: "JavaScript devient dangereux quand il n'est pas structuré",
+                category: 'Front-end',
+                date: '2025-06-20',
+                body: ["JavaScript devient dangereux quand il n'est pas structuré"]
+            },
+            {
+                id: 'article-8',
+                title: "Séparer le front et le back n'est pas une option",
+                image: 'assets/images/articles/placeholder.svg',
+                excerpt: "Séparer le front et le back n'est pas une option",
+                category: 'Architecture',
+                date: '2025-05-10',
+                body: ["Séparer le front et le back n'est pas une option"]
+            },
+            {
+                id: 'article-9',
+                title: 'La sécurité web est souvent prise trop tard',
+                image: 'assets/images/articles/placeholder.svg',
+                excerpt: 'La sécurité web est souvent prise trop tard',
+                category: 'Sécurité',
+                date: '2025-04-15',
+                body: ['La sécurité web est souvent prise trop tard']
+            },
+            {
+                id: 'article-10',
+                title: "Une application lente coûte plus qu'on ne le pense",
+                image: 'assets/images/articles/placeholder.svg',
+                excerpt: "Une application lente coûte plus qu'on ne le pense",
+                category: 'Performance',
+                date: '2025-03-22',
+                body: ["Une application lente coûte plus qu'on ne le pense"]
+            }
         ],
         ui: {
             nav: { home: 'Accueil', about: 'À propos', experience: 'Expérience', skills: 'Compétences', projects: 'Projets', education: 'Formation', articles: 'Articles', contact: 'Contact' },
@@ -109,7 +203,7 @@ const portfolioData = {
             github: 'https://github.com/claudemarjean',
             facebook: 'https://web.facebook.com/claude.marjean/',
             linkedIn: 'https://mg.linkedin.com/in/marjean-claude-andriamahatradraide-65873b246',
-            resume: 'https://drive.google.com/file/d/1qeqaymm_tZzq4mII60nRlG7_LoIM63df/view'
+            resume: 'https://drive.google.com/file/d/1BfVFq_7BdrepESi-xtb1nBBwQZX7fvQq/view?usp=sharing'
         },
         about: {
             paragraphs: [
@@ -131,30 +225,111 @@ const portfolioData = {
         ],
         skillsData: ['Angular','Bootstrap','CSS','Docker','Firebase','Flutter','Git','HTML','Javascript','MySQL','Next JS','Photoshop','PostgreSQL','Premiere Pro','Python','React','Tailwind','Typescript','Vue','Wordpress'],
         experiences: [
-            { id: 1, title: 'Deputy Development Director', company: 'MANAO Logiciels', duration: '(Jan 2024 - Present)', location: 'Madagascar', description: 'Leading dev teams, steering strategic projects, and driving tech innovation.' },
-            { id: 2, title: 'IT Manager', company: 'AFAMITA (apprenticeship)', duration: '(Nov 2020 - Present)', location: 'Madagascar', description: 'Managing the information system, money transfer platforms, and technical support.' },
-            { id: 3, title: 'Webmaster/Developer', company: 'AB Air Support (freelance)', duration: '(Mar 2025)', location: 'Remote', description: 'Built and deployed a professional B2B showcase page.' },
-            { id: 4, title: 'IT Audit Support', company: '-', duration: '(Dec 2024)', location: 'Madagascar', description: 'Audited and assessed information systems.' },
-            { id: 5, title: 'Webmaster/Developer', company: 'ExtraToo (freelance)', duration: '(Jul 2024 - Aug 2024)', location: 'Remote', description: 'Maintained and improved the Mactoo product showcase site.' },
-            { id: 6, title: 'Development Project Lead', company: 'MANAO Logiciels', duration: '(Jul 2023 - Jan 2024)', location: 'Madagascar', description: 'Managed and coordinated software development projects.' },
-            { id: 7, title: 'Full Stack Web Developer (PHP-JS)', company: 'MANAO Logiciels', duration: '(Apr 2022 - Jun 2023)', location: 'Madagascar', description: 'Built complete web applications with PHP and JavaScript.' },
-            { id: 8, title: 'Significant Professional Internships', company: '-', duration: '', location: '', description: 'Technical and functional internships that built strong foundations in software development, information systems, and IT project management.' }
+            { id: 1, title: 'Director of Development', company: 'MANAO Logiciels', duration: '(Jan 2026 - Present)', location: 'Madagascar', description: 'Steers the development strategy, drives architectural decisions, ensures scalability, security, and performance, and mentors product and engineering teams.' },
+            { id: 2, title: 'Deputy Development Director', company: 'MANAO Logiciels', duration: '(Jan 2024 - Dec 2025)', location: 'Madagascar', description: 'Led dev teams, drove strategic projects, and innovation initiatives.' },
+            { id: 3, title: 'IT Manager', company: 'AFAMITA (apprenticeship)', duration: '(Nov 2020 - Present)', location: 'Madagascar', description: 'Managing the information system, money transfer platforms, and technical support.' },
+            { id: 4, title: 'Webmaster/Developer', company: 'AB Air Support (freelance)', duration: '(Mar 2025)', location: 'Remote', description: 'Built and deployed a professional B2B showcase page.' },
+            { id: 5, title: 'IT Audit Support', company: '-', duration: '(Dec 2024)', location: 'Madagascar', description: 'Audited and assessed information systems.' },
+            { id: 6, title: 'Webmaster/Developer', company: 'ExtraToo (freelance)', duration: '(Jul 2024 - Aug 2024)', location: 'Remote', description: 'Maintained and improved the Mactoo product showcase site.' },
+            { id: 7, title: 'Development Project Lead', company: 'MANAO Logiciels', duration: '(Jul 2023 - Jan 2024)', location: 'Madagascar', description: 'Managed and coordinated software development projects.' },
+            { id: 8, title: 'Full Stack Web Developer (PHP-JS)', company: 'MANAO Logiciels', duration: '(Apr 2022 - Jun 2023)', location: 'Madagascar', description: 'Built complete web applications with PHP and JavaScript.' },
+            { id: 9, title: 'Significant Professional Internships', company: '-', duration: '', location: '', description: 'Technical and functional internships that built strong foundations in software development, information systems, and IT project management.' }
         ],
         educations: [
             { id: 1, title: 'Master 2', duration: '2021 - 2022', institution: "École Nationale D'Informatique", location: 'Madagascar', description: 'Master in Computer Science, specialized in software development' },
             { id: 2, title: 'Bachelor', duration: '2019 - 2020', institution: "École Nationale D'Informatique", location: 'Madagascar', description: 'Bachelor in Computer Science' }
         ],
         articlesData: [
-            { id: 'article-1', title: 'Why so many IT projects fail before the first line of code', image: 'assets/images/articles/projets informatiques echouent.png', excerpt: 'Why so many IT projects fail before the first line of code', body: ['Many projects are weakened long before development starts.', 'Failure often begins during the initial framing phase.', 'Goals are vague, priorities unclear, and business constraints underestimated.', 'The real need is rarely expressed in an actionable way.', 'Technical choices come too early without a global vision or evolution scenarios.', 'Scope drifts without clear rules, creating conflicting expectations.', 'The project moves forward without stable direction.', 'Code becomes a constant attempt to adapt.', "It is not a skills issue but an upstream decision issue.", 'A well-framed project reduces risks before any code is written.'] },
-            { id: 'article-2', title: "The real problem in a project is almost never technical", image: 'assets/images/articles/placeholder.svg', excerpt: "The real problem in a project is almost never technical", body: ["The real problem in a project is almost never technical"] },
-            { id: 'article-3', title: 'What specifications systematically forget', image: 'assets/images/articles/placeholder.svg', excerpt: 'What specifications systematically forget', body: ['What specifications systematically forget'] },
-            { id: 'article-4', title: 'Non-technical decisions that sink an IT project', image: 'assets/images/articles/placeholder.svg', excerpt: 'Non-technical decisions that sink an IT project', body: ['Non-technical decisions that sink an IT project'] },
-            { id: 'article-5', title: 'Technical debt does not start in the code', image: 'assets/images/articles/placeholder.svg', excerpt: 'Technical debt does not start in the code', body: ['Technical debt does not start in the code'] },
-            { id: 'article-6', title: 'PHP is not the problem, its usage is', image: 'assets/images/articles/placeholder.svg', excerpt: 'PHP is not the problem, its usage is', body: ['PHP is not the problem, its usage is'] },
-            { id: 'article-7', title: 'JavaScript becomes dangerous when unstructured', image: 'assets/images/articles/placeholder.svg', excerpt: 'JavaScript becomes dangerous when unstructured', body: ['JavaScript becomes dangerous when unstructured'] },
-            { id: 'article-8', title: 'Splitting front and back is not optional', image: 'assets/images/articles/placeholder.svg', excerpt: 'Splitting front and back is not optional', body: ['Splitting front and back is not optional'] },
-            { id: 'article-9', title: 'Web security is often considered too late', image: 'assets/images/articles/placeholder.svg', excerpt: 'Web security is often considered too late', body: ['Web security is often considered too late'] },
-            { id: 'article-10', title: 'A slow app costs more than you think', image: 'assets/images/articles/placeholder.svg', excerpt: 'A slow app costs more than you think', body: ['A slow app costs more than you think'] }
+            {
+                id: 'article-1',
+                title: 'Why so many IT projects fail before the first line of code',
+                image: 'assets/images/articles/projets informatiques echouent.png',
+                excerpt: 'Why so many IT projects fail before the first line of code',
+                category: 'Product governance',
+                date: '2025-12-10',
+                body: ['Many projects are weakened long before development starts.', 'Failure often begins during the initial framing phase.', 'Goals are vague, priorities unclear, and business constraints underestimated.', 'The real need is rarely expressed in an actionable way.', 'Technical choices come too early without a global vision or evolution scenarios.', 'Scope drifts without clear rules, creating conflicting expectations.', 'The project moves forward without stable direction.', 'Code becomes a constant attempt to adapt.', "It is not a skills issue but an upstream decision issue.", 'A well-framed project reduces risks before any code is written.']
+            },
+            {
+                id: 'article-2',
+                title: "The real problem in a project is almost never technical",
+                image: 'assets/images/articles/placeholder.svg',
+                excerpt: "The real problem in a project is almost never technical",
+                category: 'Project leadership',
+                date: '2025-11-15',
+                body: ["The real problem in a project is almost never technical"]
+            },
+            {
+                id: 'article-3',
+                title: 'What specifications systematically forget',
+                image: 'assets/images/articles/placeholder.svg',
+                excerpt: 'What specifications systematically forget',
+                category: 'Scoping',
+                date: '2025-10-02',
+                body: ['What specifications systematically forget']
+            },
+            {
+                id: 'article-4',
+                title: 'Non-technical decisions that sink an IT project',
+                image: 'assets/images/articles/placeholder.svg',
+                excerpt: 'Non-technical decisions that sink an IT project',
+                category: 'Management',
+                date: '2025-09-12',
+                body: ['Non-technical decisions that sink an IT project']
+            },
+            {
+                id: 'article-5',
+                title: 'Technical debt does not start in the code',
+                image: 'assets/images/articles/placeholder.svg',
+                excerpt: 'Technical debt does not start in the code',
+                category: 'Quality',
+                date: '2025-08-18',
+                body: ['Technical debt does not start in the code']
+            },
+            {
+                id: 'article-6',
+                title: 'PHP is not the problem, its usage is',
+                image: 'assets/images/articles/placeholder.svg',
+                excerpt: 'PHP is not the problem, its usage is',
+                category: 'Architecture',
+                date: '2025-07-05',
+                body: ['PHP is not the problem, its usage is']
+            },
+            {
+                id: 'article-7',
+                title: 'JavaScript becomes dangerous when unstructured',
+                image: 'assets/images/articles/placeholder.svg',
+                excerpt: 'JavaScript becomes dangerous when unstructured',
+                category: 'Front-end',
+                date: '2025-06-20',
+                body: ['JavaScript becomes dangerous when unstructured']
+            },
+            {
+                id: 'article-8',
+                title: 'Splitting front and back is not optional',
+                image: 'assets/images/articles/placeholder.svg',
+                excerpt: 'Splitting front and back is not optional',
+                category: 'Architecture',
+                date: '2025-05-10',
+                body: ['Splitting front and back is not optional']
+            },
+            {
+                id: 'article-9',
+                title: 'Web security is often considered too late',
+                image: 'assets/images/articles/placeholder.svg',
+                excerpt: 'Web security is often considered too late',
+                category: 'Security',
+                date: '2025-04-15',
+                body: ['Web security is often considered too late']
+            },
+            {
+                id: 'article-10',
+                title: 'A slow app costs more than you think',
+                image: 'assets/images/articles/placeholder.svg',
+                excerpt: 'A slow app costs more than you think',
+                category: 'Performance',
+                date: '2025-03-22',
+                body: ['A slow app costs more than you think']
+            }
         ],
         ui: {
             nav: { home: 'Home', about: 'About', experience: 'Experience', skills: 'Skills', projects: 'Projects', education: 'Education', articles: 'Articles', contact: 'Contact' },
@@ -213,7 +388,7 @@ function updateNavText(navLabels) {
         { selector: '.nav-link[href="#skills"]', text: navLabels.skills },
         { selector: '.nav-link[href="#projects"]', text: navLabels.projects },
         { selector: '.nav-link[href="#education"]', text: navLabels.education },
-        { selector: '.nav-link[href="#articles"]', text: navLabels.articles },
+        { selector: '.nav-link[href="#articles-page"]', text: navLabels.articles },
         { selector: '.nav-link[href="#contact"]', text: navLabels.contact }
     ];
     mapping.forEach(({ selector, text }) => {
@@ -230,6 +405,7 @@ function updateSectionTitles(sectionTexts) {
         { selector: '#projects .section-title', text: sectionTexts.projects },
         { selector: '#education .section-title', text: sectionTexts.education },
         { selector: '#articles .section-title', text: sectionTexts.articles },
+        { selector: '#articles-page .section-title', text: sectionTexts.articles },
         { selector: '#contact .section-title', text: sectionTexts.contact }
     ];
     mapping.forEach(({ selector, text }) => {

@@ -172,111 +172,192 @@ function loadProjects(projects = []) {
 }
 
 /**
- * Charge et affiche les articles
+ * Formatage de la date d'un article
  */
-function loadArticles(articles = []) {
-    const ticker = document.getElementById('articlesTicker');
-    const articleDetail = document.getElementById('articleDetail');
-    const detailTitle = document.getElementById('articleDetailTitle');
-    const detailBody = document.getElementById('articleDetailBody');
-    const detailImage = document.getElementById('articleDetailImage');
-    const closeBtn = document.querySelector('.article-close');
+function formatArticleDate(date) {
+    if (!date) return '';
+    const locale = typeof getCurrentLanguage === 'function' ? getCurrentLanguage() : 'fr';
+    const parsed = new Date(date);
+    if (Number.isNaN(parsed)) return '';
+    return parsed.toLocaleDateString(locale === 'fr' ? 'fr-FR' : 'en-US', {
+        day: '2-digit',
+        month: 'short',
+        year: 'numeric'
+    });
+}
 
-    if (!ticker || !articleDetail || !articles.length) return;
+function getArticleLocale() {
+    return typeof getCurrentLanguage === 'function' ? getCurrentLanguage() : 'fr';
+}
 
-    const mid = Math.ceil(articles.length / 2);
-    const firstRow = articles.slice(0, mid);
-    const secondRow = articles.slice(mid);
-
-    const renderRow = (items, direction) => `
-        <div class="articles-row ${direction === 'right' ? 'reverse' : ''}">
-            <div class="articles-track ${direction === 'right' ? 'scroll-right' : 'scroll-left'}">
-                ${[...items, ...items].map(createArticlePill).join('')}
+/**
+ * Carte aperçu sur la page principale
+ */
+function createArticlePreviewCard(article) {
+    const ctaLabel = getArticleLocale() === 'en' ? 'Read article' : "Lire l'article";
+    return `
+        <article class="article-preview-card" data-article-id="${article.id}" data-aos="fade-up">
+            <div class="article-preview-image">
+                <img src="${article.image}" alt="${article.title}" onerror="this.src='assets/images/placeholder-project.jpg'">
+                <span class="article-badge">${article.category || 'Article'}</span>
             </div>
-        </div>
+            <div class="article-preview-content">
+                <div class="article-preview-meta">
+                    ${article.date ? `<span class="article-date">${formatArticleDate(article.date)}</span>` : ''}
+                </div>
+                <h3>${article.title}</h3>
+                <p>${article.excerpt || ''}</p>
+                <a href="#articles-page" class="article-link" data-article-id="${article.id}">${ctaLabel}</a>
+            </div>
+        </article>
     `;
+}
 
-    ticker.innerHTML = renderRow(firstRow, 'left') + renderRow(secondRow.length ? secondRow : firstRow, 'right');
+/**
+ * Carte d'article pour la page dédiée
+ */
+function createArticleCard(article) {
+    const ctaLabel = getArticleLocale() === 'en' ? 'Read article' : "Lire l'article";
+    return `
+        <article class="article-card" data-article-id="${article.id}" data-category="${(article.category || 'Article').toLowerCase()}">
+            <div class="article-card__image">
+                <img src="${article.image}" alt="${article.title}" onerror="this.src='assets/images/placeholder-project.jpg'">
+                <span class="article-badge">${article.category || 'Article'}</span>
+            </div>
+            <div class="article-card__body">
+                <div class="article-card__meta">
+                    ${article.date ? `<span class="article-date">${formatArticleDate(article.date)}</span>` : ''}
+                </div>
+                <h3>${article.title}</h3>
+                <p>${article.excerpt || ''}</p>
+                <button class="article-card__cta" type="button" data-article-id="${article.id}">
+                    ${ctaLabel} <i class="fas fa-arrow-right"></i>
+                </button>
+            </div>
+        </article>
+    `;
+}
 
-    // Activer le drag pour scroller et pauser l'animation
-    ticker.querySelectorAll('.articles-row').forEach(row => {
-        let isDown = false;
-        let startX = 0;
-        let scrollStart = 0;
-        let hasMoved = false;
+/**
+ * Affiche le détail d'un article dans le panneau dédié
+ */
+function showArticleDetail(article) {
+    const panel = document.getElementById('articleDetailPanel');
+    if (!panel || !article) return;
 
-        const pause = () => row.classList.add('user-dragging');
-        const resume = () => row.classList.remove('user-dragging');
+    const cover = document.getElementById('articleDetailCover');
+    const category = document.getElementById('articleDetailCategory');
+    const date = document.getElementById('articleDetailDate');
+    const title = document.getElementById('articleDetailTitle');
+    const excerpt = document.getElementById('articleDetailExcerpt');
+    const body = document.getElementById('articleDetailBody');
 
-        row.addEventListener('pointerdown', (e) => {
-            isDown = true;
-            startX = e.pageX - row.offsetLeft;
-            scrollStart = row.scrollLeft;
-            hasMoved = false;
-            row.setPointerCapture(e.pointerId);
-        });
+    if (cover) {
+        cover.src = article.image;
+        cover.alt = article.title;
+    }
+    if (category) category.textContent = article.category || 'Article';
+    if (date) date.textContent = formatArticleDate(article.date);
+    if (title) title.textContent = article.title;
+    if (excerpt) excerpt.textContent = article.excerpt || '';
+    if (body) body.innerHTML = (article.body || []).map(p => `<p>${p}</p>`).join('');
 
-        row.addEventListener('pointermove', (e) => {
-            if (!isDown) return;
-            const x = e.pageX - row.offsetLeft;
-            const walk = (x - startX) * -1;
-            if (Math.abs(walk) > 5) {
-                hasMoved = true;
-                pause();
-                row.scrollLeft = scrollStart + walk;
-            }
-        });
-
-        const endDrag = (e) => {
-            if (!isDown) return;
-            isDown = false;
-            resume();
-            if (e.pointerId) row.releasePointerCapture(e.pointerId);
-
-            // Si le doigt/souris n'a pas réellement glissé, on considère que c'est un clic
-            if (!hasMoved) {
-                const pillFromTarget = e.target.closest('.article-pill');
-                const pillFromPoint = document.elementFromPoint(e.clientX, e.clientY)?.closest('.article-pill');
-                const pill = pillFromTarget || pillFromPoint;
-                if (pill) {
-                    showArticle(pill.dataset.articleId);
-                }
-            }
-        };
-
-        row.addEventListener('pointerup', endDrag);
-        row.addEventListener('pointerleave', endDrag);
+    panel.classList.remove('hidden');
+    requestAnimationFrame(() => {
+        panel.classList.add('visible');
+        panel.scrollIntoView({ behavior: 'smooth', block: 'start' });
     });
+}
 
-    const showArticle = (articleId) => {
-        const article = articles.find(item => item.id === articleId);
-        if (!article) return;
-        detailTitle.textContent = article.title;
-        detailImage.src = article.image;
-        detailImage.alt = article.title;
-        detailBody.innerHTML = article.body.map(p => `<p>${p}</p>`).join('');
-        articleDetail.classList.remove('hidden');
-        requestAnimationFrame(() => {
-            articleDetail.classList.add('visible');
-            articleDetail.scrollIntoView({ behavior: 'smooth', block: 'start' });
-        });
+function closeArticleDetail() {
+    const panel = document.getElementById('articleDetailPanel');
+    if (!panel) return;
+    panel.classList.remove('visible');
+    panel.classList.add('hidden');
+}
+
+function renderArticlesPreview(articles = []) {
+    const preview = document.getElementById('articlesPreview');
+    if (!preview) return;
+
+    const sorted = [...articles].sort((a, b) => new Date(b.date || 0) - new Date(a.date || 0));
+    const limited = sorted.slice(0, 3);
+    preview.innerHTML = limited.map(createArticlePreviewCard).join('');
+
+    preview.onclick = (event) => {
+        const link = event.target.closest('.article-link');
+        if (!link) return;
+        window.__pendingArticleId = link.dataset.articleId;
     };
+}
 
-    ticker.addEventListener('click', (event) => {
-        const pill = event.target.closest('.article-pill');
-        if (!pill) return;
-        showArticle(pill.dataset.articleId);
-    });
+function renderArticlesPage(articles = []) {
+    const grid = document.getElementById('articlesGrid');
+    const filter = document.getElementById('articlesFilter');
+    if (!grid) return;
 
-    if (closeBtn) {
-        closeBtn.addEventListener('click', () => {
-            articleDetail.classList.remove('visible');
-            articleDetail.classList.add('hidden');
-        });
+    const locale = getArticleLocale();
+    const allLabel = locale === 'en' ? 'All' : 'Tous';
+    const categories = [allLabel, ...new Set(articles.map(a => a.category || 'Article'))];
+    if (filter) {
+        filter.innerHTML = categories.map((cat, index) => `
+            <button class="filter-chip ${index === 0 ? 'active' : ''}" data-filter="${cat}">${cat}</button>
+        `).join('');
     }
 
-    // Ne pas afficher automatiquement d'article au chargement
-    // L'utilisateur doit cliquer sur un article pour l'afficher
+    const render = (category = allLabel) => {
+        const filtered = category === allLabel ? articles : articles.filter(a => (a.category || 'Article') === category);
+        grid.innerHTML = filtered.map(createArticleCard).join('');
+        grid.onclick = (event) => {
+            const target = event.target.closest('.article-card, .article-card__cta');
+            if (!target || !grid.contains(target)) return;
+            const card = target.classList.contains('article-card') ? target : target.closest('.article-card');
+            const id = card?.dataset.articleId || target.dataset.articleId;
+            const article = filtered.find(item => item.id === id) || articles.find(item => item.id === id);
+            showArticleDetail(article);
+        };
+    };
+
+    render();
+
+    if (filter) {
+        filter.onclick = (event) => {
+            const btn = event.target.closest('.filter-chip');
+            if (!btn) return;
+            filter.querySelectorAll('.filter-chip').forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+            render(btn.dataset.filter);
+        };
+    }
+
+    const closeBtn = document.querySelector('.article-detail-close');
+    if (closeBtn) {
+        closeBtn.onclick = () => closeArticleDetail();
+    }
+
+    if (window.__pendingArticleId) {
+        const pending = articles.find(a => a.id === window.__pendingArticleId);
+        if (pending) showArticleDetail(pending);
+        window.__pendingArticleId = null;
+    }
+}
+
+/**
+ * Charge et affiche les articles (aperçu + page dédiée)
+ */
+function loadArticles(articles = []) {
+    const normalized = (articles || []).map((article, index) => ({
+        ...article,
+        category: article.category || 'Article',
+        date: article.date || `2024-01-${String(index + 10).padStart(2, '0')}`
+    }));
+
+    // Afficher seulement les articles 1 et 2 pour le moment
+    const allowedIds = ['article-1', 'article-2'];
+    const visibleArticles = normalized.filter(article => allowedIds.includes(article.id));
+
+    renderArticlesPreview(visibleArticles);
+    renderArticlesPage(visibleArticles);
 }
 
 /**
