@@ -22,7 +22,26 @@ const articlesData = [
             'Un projet bien cadré réduit les risques avant même d’écrire la première ligne de code.'
         ]
     },
-    { id: 'article-2', title: 'Le vrai problème d\'un projet n\'est presque jamais technique', image: 'assets/images/articles/placeholder.svg', excerpt: 'Le vrai problème d\'un projet n\'est presque jamais technique', body: ['Le vrai problème d\'un projet n\'est presque jamais technique'] },
+    {
+        id: 'article-2',
+        title: 'Ce qui fait réellement démarrer un projet IT sur de bonnes bases',
+        image: 'assets/images/articles/demarrer-un-projet-ITsur-de-bonnes-bases.png',
+        excerpt: 'Ce qui fait réellement démarrer un projet IT sur de bonnes bases',
+        body: [
+            'Un projet IT démarre avant tout par une compréhension partagée.',
+            'Tout commence par une définition claire du problème à résoudre.',
+            'Les objectifs doivent être compréhensibles, mesurables et alignés entre les parties prenantes.',
+            'Le besoin métier gagne à être traduit en exigences concrètes et priorisées.',
+            'Un démarrage solide repose sur un périmètre défini et maîtrisé.',
+            'Les contraintes doivent être identifiées dès le départ.',
+            'Les rôles et responsabilités doivent être clairement établis.',
+            'Les décisions efficaces s’appuient sur des éléments factuels.',
+            'La vision produit guide les choix techniques.',
+            'La technologie intervient comme un outil au service de cette vision.',
+            'Un cadrage structuré facilite les arbitrages et sécurise l’exécution.',
+            'Il améliore durablement la qualité du projet.'
+        ]
+    },
     { id: 'article-3', title: 'Ce que les cahiers des charges oublient systématiquement', image: 'assets/images/articles/placeholder.svg', excerpt: 'Ce que les cahiers des charges oublient systématiquement', body: ['Ce que les cahiers des charges oublient systématiquement'] },
     { id: 'article-4', title: 'Les décisions non techniques qui sabotent un projet IT', image: 'assets/images/articles/placeholder.svg', excerpt: 'Les décisions non techniques qui sabotent un projet IT', body: ['Les décisions non techniques qui sabotent un projet IT'] },
     { id: 'article-5', title: 'La dette technique ne commence pas dans le code', image: 'assets/images/articles/placeholder.svg', excerpt: 'La dette technique ne commence pas dans le code', body: ['La dette technique ne commence pas dans le code'] },
