@@ -75,16 +75,16 @@ class Router {
         
         const sectionId = hash.replace('#', '');
 
-        // Mettre à jour la navigation active
-        this.updateActiveNavLink(hash);
-
-        // Scroll vers la section
-        this.scrollToSection(sectionId);
-
-        // Exécuter le callback de la route si elle existe
+        // Exécuter le callback de la route en premier (pour que la section soit visible avant le scroll)
         if (this.routes[hash]) {
             this.routes[hash]();
         }
+
+        // Mettre à jour la navigation active
+        this.updateActiveNavLink(hash);
+
+        // Scroll vers la section (désormais visible)
+        this.scrollToSection(sectionId);
 
         // Mettre à jour la section courante
         this.currentSection = sectionId;
@@ -138,6 +138,11 @@ class Router {
     detectVisibleSection() {
         // Ne pas détecter pendant le chargement initial
         if (this.isInitialLoad) {
+            return;
+        }
+
+        // Ignorer la détection lorsqu'on est sur la page Articles dédiée
+        if (document.body.classList.contains('view-articles')) {
             return;
         }
         
