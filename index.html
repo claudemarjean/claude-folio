@@ -48,7 +48,7 @@
                     <li><a href="#skills" class="nav-link">Compétences</a></li>
                     <li><a href="#projects" class="nav-link">Projets</a></li>
                     <li><a href="#education" class="nav-link">Formation</a></li>
-                    <li><a href="#articles" class="nav-link">Articles</a></li>
+                    <li><a href="#articles-page" class="nav-link">Articles</a></li>
                     <li><a href="#contact" class="nav-link">Contact</a></li>
                 </ul>
             </div>
@@ -216,24 +216,60 @@
             </div>
         </section>
 
-        <!-- Articles Section -->
-        <section id="articles" class="section articles-section">
+        <!-- Articles Preview (Home) -->
+        <section id="articles" class="section articles-preview-section">
             <div class="container">
                 <h2 class="section-title">
                     <span class="title-number">07.</span>
                     Articles
                 </h2>
 
-                <div class="articles-ticker" id="articlesTicker"></div>
-
-                <div class="article-detail hidden" id="articleDetail">
-                    <button class="article-close" aria-label="Fermer l'article">&times;</button>
-                    <div class="article-detail-image-wrapper">
-                        <img id="articleDetailImage" src="" alt="Visuel de l'article">
+                <div class="articles-preview-header">
+                    <p class="section-subtitle">Sélection rapide des derniers articles sans quitter la page principale.</p>
+                    <div class="articles-preview-actions">
+                        <a href="#articles-page" class="btn btn-primary">Voir tous les articles</a>
                     </div>
-                    <div class="article-detail-content">
-                        <h3 id="articleDetailTitle"></h3>
-                        <div id="articleDetailBody"></div>
+                </div>
+
+                <div class="articles-preview-grid" id="articlesPreview"></div>
+            </div>
+        </section>
+
+        <!-- Articles Dedicated Page -->
+        <section id="articles-page" class="section articles-page-section hidden">
+            <div class="container">
+                <div class="articles-page-hero">
+                    <p class="eyebrow">Articles &amp; Publications</p>
+                    <h2 class="section-title">
+                        <span class="title-number">07.</span>
+                        Articles &amp; Publications
+                    </h2>
+                    <p class="section-subtitle">Une page dédiée pour parcourir, filtrer et lire l'ensemble des contenus.</p>
+                    <div class="articles-page-actions">
+                        <a href="#home" class="link-muted">Retour à l'accueil</a>
+                        <a href="#contact" class="link-muted">Me contacter</a>
+                    </div>
+                </div>
+
+                <div class="articles-filter-bar" id="articlesFilter"></div>
+
+                <div class="articles-grid" id="articlesGrid"></div>
+
+                <div class="article-detail-panel hidden" id="articleDetailPanel">
+                    <button class="article-detail-close" aria-label="Fermer l'article">&times;</button>
+                    <div class="article-detail-body">
+                        <div class="article-detail-cover">
+                            <img src="" alt="" id="articleDetailCover">
+                            <div class="article-detail-meta">
+                                <span class="article-badge" id="articleDetailCategory"></span>
+                                <span class="article-date" id="articleDetailDate"></span>
+                            </div>
+                        </div>
+                        <div class="article-detail-content">
+                            <h3 id="articleDetailTitle"></h3>
+                            <p class="article-detail-excerpt" id="articleDetailExcerpt"></p>
+                            <div id="articleDetailBody"></div>
+                        </div>
                     </div>
                 </div>
             </div>

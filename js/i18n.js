@@ -57,16 +57,109 @@ const portfolioData = {
             { id: 2, title: 'Licence', duration: '2019 - 2020', institution: "École Nationale D'Informatique", location: 'Madagascar', description: 'Licence en Informatique' }
         ],
         articlesData: [
-            { id: 'article-1', title: "Pourquoi tant de projets informatiques échouent avant même la première ligne de code", image: 'assets/images/articles/projets informatiques echouent.png', excerpt: "Pourquoi tant de projets informatiques échouent avant même la première ligne de code", body: ['De nombreux projets sont fragilisés bien avant le démarrage du développement.', 'L’échec prend souvent racine dans la phase de cadrage initial.', 'Les objectifs sont imprécis, les priorités mal hiérarchisées et les contraintes métier sous-estimées.', 'Le besoin réel est rarement formalisé de manière exploitable.', 'Les choix techniques arrivent trop tôt, sans vision globale ni scénario d’évolution.', 'Le périmètre évolue sans règles claires, créant des attentes contradictoires.', 'Le projet progresse, mais sans direction stable.', 'Le code devient alors une tentative d’adaptation permanente.', 'Ce n’est pas un problème de compétences techniques, mais de décisions amont.', 'Un projet bien cadré réduit les risques avant même d’écrire la première ligne de code.'] },
-            { id: 'article-2', title: "Le vrai problème d'un projet n'est presque jamais technique", image: 'assets/images/articles/placeholder.svg', excerpt: "Le vrai problème d'un projet n'est presque jamais technique", body: ["Le vrai problème d'un projet n'est presque jamais technique"] },
-            { id: 'article-3', title: 'Ce que les cahiers des charges oublient systématiquement', image: 'assets/images/articles/placeholder.svg', excerpt: 'Ce que les cahiers des charges oublient systématiquement', body: ['Ce que les cahiers des charges oublient systématiquement'] },
-            { id: 'article-4', title: 'Les décisions non techniques qui sabotent un projet IT', image: 'assets/images/articles/placeholder.svg', excerpt: 'Les décisions non techniques qui sabotent un projet IT', body: ['Les décisions non techniques qui sabotent un projet IT'] },
-            { id: 'article-5', title: 'La dette technique ne commence pas dans le code', image: 'assets/images/articles/placeholder.svg', excerpt: 'La dette technique ne commence pas dans le code', body: ['La dette technique ne commence pas dans le code'] },
-            { id: 'article-6', title: "PHP n'est pas le problème, son utilisation l'est", image: 'assets/images/articles/placeholder.svg', excerpt: "PHP n'est pas le problème, son utilisation l'est", body: ["PHP n'est pas le problème, son utilisation l'est"] },
-            { id: 'article-7', title: "JavaScript devient dangereux quand il n'est pas structuré", image: 'assets/images/articles/placeholder.svg', excerpt: "JavaScript devient dangereux quand il n'est pas structuré", body: ["JavaScript devient dangereux quand il n'est pas structuré"] },
-            { id: 'article-8', title: "Séparer le front et le back n'est pas une option", image: 'assets/images/articles/placeholder.svg', excerpt: "Séparer le front et le back n'est pas une option", body: ["Séparer le front et le back n'est pas une option"] },
-            { id: 'article-9', title: 'La sécurité web est souvent prise trop tard', image: 'assets/images/articles/placeholder.svg', excerpt: 'La sécurité web est souvent prise trop tard', body: ['La sécurité web est souvent prise trop tard'] },
-            { id: 'article-10', title: "Une application lente coûte plus qu'on ne le pense", image: 'assets/images/articles/placeholder.svg', excerpt: "Une application lente coûte plus qu'on ne le pense", body: ["Une application lente coûte plus qu'on ne le pense"] }
+            {
+                id: 'article-1',
+                title: "Pourquoi tant de projets informatiques échouent avant même la première ligne de code",
+                image: 'assets/images/articles/projets informatiques echouent.png',
+                excerpt: "Pourquoi tant de projets informatiques échouent avant même la première ligne de code",
+                category: 'Gouvernance produit',
+                date: '2025-12-10',
+                body: ['De nombreux projets sont fragilisés bien avant le démarrage du développement.', 'L’échec prend souvent racine dans la phase de cadrage initial.', 'Les objectifs sont imprécis, les priorités mal hiérarchisées et les contraintes métier sous-estimées.', 'Le besoin réel est rarement formalisé de manière exploitable.', 'Les choix techniques arrivent trop tôt, sans vision globale ni scénario d’évolution.', 'Le périmètre évolue sans règles claires, créant des attentes contradictoires.', 'Le projet progresse, mais sans direction stable.', 'Le code devient alors une tentative d’adaptation permanente.', 'Ce n’est pas un problème de compétences techniques, mais de décisions amont.', 'Un projet bien cadré réduit les risques avant même d’écrire la première ligne de code.']
+            },
+            {
+                id: 'article-2',
+                title: 'Ce qui fait réellement démarrer un projet IT sur de bonnes bases',
+                image: 'assets/images/articles/demarrer-un-projet-ITsur-de-bonnes-bases.png',
+                excerpt: 'Ce qui fait réellement démarrer un projet IT sur de bonnes bases',
+                category: 'Pilotage projet',
+                date: '2026-01-13',
+                body: [
+                    'Un projet IT démarre avant tout par une compréhension partagée.',
+                    'Tout commence par une définition claire du problème à résoudre.',
+                    'Les objectifs doivent être compréhensibles, mesurables et alignés entre les parties prenantes.',
+                    'Le besoin métier gagne à être traduit en exigences concrètes et priorisées.',
+                    'Un démarrage solide repose sur un périmètre défini et maîtrisé.',
+                    'Les contraintes doivent être identifiées dès le départ.',
+                    'Les rôles et responsabilités doivent être clairement établis.',
+                    'Les décisions efficaces s’appuient sur des éléments factuels.',
+                    'La vision produit guide les choix techniques.',
+                    'La technologie intervient comme un outil au service de cette vision.',
+                    'Un cadrage structuré facilite les arbitrages et sécurise l’exécution.',
+                    'Il améliore durablement la qualité du projet.'
+                ]
+            },
+            {
+                id: 'article-3',
+                title: 'Ce que les cahiers des charges oublient systématiquement',
+                image: 'assets/images/articles/placeholder.svg',
+                excerpt: 'Ce que les cahiers des charges oublient systématiquement',
+                category: 'Cadrage',
+                date: '2025-10-02',
+                body: ['Ce que les cahiers des charges oublient systématiquement']
+            },
+            {
+                id: 'article-4',
+                title: 'Les décisions non techniques qui sabotent un projet IT',
+                image: 'assets/images/articles/placeholder.svg',
+                excerpt: 'Les décisions non techniques qui sabotent un projet IT',
+                category: 'Management',
+                date: '2025-09-12',
+                body: ['Les décisions non techniques qui sabotent un projet IT']
+            },
+            {
+                id: 'article-5',
+                title: 'La dette technique ne commence pas dans le code',
+                image: 'assets/images/articles/placeholder.svg',
+                excerpt: 'La dette technique ne commence pas dans le code',
+                category: 'Qualité',
+                date: '2025-08-18',
+                body: ['La dette technique ne commence pas dans le code']
+            },
+            {
+                id: 'article-6',
+                title: "PHP n'est pas le problème, son utilisation l'est",
+                image: 'assets/images/articles/placeholder.svg',
+                excerpt: "PHP n'est pas le problème, son utilisation l'est",
+                category: 'Architecture',
+                date: '2025-07-05',
+                body: ["PHP n'est pas le problème, son utilisation l'est"]
+            },
+            {
+                id: 'article-7',
+                title: "JavaScript devient dangereux quand il n'est pas structuré",
+                image: 'assets/images/articles/placeholder.svg',
+                excerpt: "JavaScript devient dangereux quand il n'est pas structuré",
+                category: 'Front-end',
+                date: '2025-06-20',
+                body: ["JavaScript devient dangereux quand il n'est pas structuré"]
+            },
+            {
+                id: 'article-8',
+                title: "Séparer le front et le back n'est pas une option",
+                image: 'assets/images/articles/placeholder.svg',
+                excerpt: "Séparer le front et le back n'est pas une option",
+                category: 'Architecture',
+                date: '2025-05-10',
+                body: ["Séparer le front et le back n'est pas une option"]
+            },
+            {
+                id: 'article-9',
+                title: 'La sécurité web est souvent prise trop tard',
+                image: 'assets/images/articles/placeholder.svg',
+                excerpt: 'La sécurité web est souvent prise trop tard',
+                category: 'Sécurité',
+                date: '2025-04-15',
+                body: ['La sécurité web est souvent prise trop tard']
+            },
+            {
+                id: 'article-10',
+                title: "Une application lente coûte plus qu'on ne le pense",
+                image: 'assets/images/articles/placeholder.svg',
+                excerpt: "Une application lente coûte plus qu'on ne le pense",
+                category: 'Performance',
+                date: '2025-03-22',
+                body: ["Une application lente coûte plus qu'on ne le pense"]
+            }
         ],
         ui: {
             nav: { home: 'Accueil', about: 'À propos', experience: 'Expérience', skills: 'Compétences', projects: 'Projets', education: 'Formation', articles: 'Articles', contact: 'Contact' },
@@ -145,16 +238,96 @@ const portfolioData = {
             { id: 2, title: 'Bachelor', duration: '2019 - 2020', institution: "École Nationale D'Informatique", location: 'Madagascar', description: 'Bachelor in Computer Science' }
         ],
         articlesData: [
-            { id: 'article-1', title: 'Why so many IT projects fail before the first line of code', image: 'assets/images/articles/projets informatiques echouent.png', excerpt: 'Why so many IT projects fail before the first line of code', body: ['Many projects are weakened long before development starts.', 'Failure often begins during the initial framing phase.', 'Goals are vague, priorities unclear, and business constraints underestimated.', 'The real need is rarely expressed in an actionable way.', 'Technical choices come too early without a global vision or evolution scenarios.', 'Scope drifts without clear rules, creating conflicting expectations.', 'The project moves forward without stable direction.', 'Code becomes a constant attempt to adapt.', "It is not a skills issue but an upstream decision issue.", 'A well-framed project reduces risks before any code is written.'] },
-            { id: 'article-2', title: "The real problem in a project is almost never technical", image: 'assets/images/articles/placeholder.svg', excerpt: "The real problem in a project is almost never technical", body: ["The real problem in a project is almost never technical"] },
-            { id: 'article-3', title: 'What specifications systematically forget', image: 'assets/images/articles/placeholder.svg', excerpt: 'What specifications systematically forget', body: ['What specifications systematically forget'] },
-            { id: 'article-4', title: 'Non-technical decisions that sink an IT project', image: 'assets/images/articles/placeholder.svg', excerpt: 'Non-technical decisions that sink an IT project', body: ['Non-technical decisions that sink an IT project'] },
-            { id: 'article-5', title: 'Technical debt does not start in the code', image: 'assets/images/articles/placeholder.svg', excerpt: 'Technical debt does not start in the code', body: ['Technical debt does not start in the code'] },
-            { id: 'article-6', title: 'PHP is not the problem, its usage is', image: 'assets/images/articles/placeholder.svg', excerpt: 'PHP is not the problem, its usage is', body: ['PHP is not the problem, its usage is'] },
-            { id: 'article-7', title: 'JavaScript becomes dangerous when unstructured', image: 'assets/images/articles/placeholder.svg', excerpt: 'JavaScript becomes dangerous when unstructured', body: ['JavaScript becomes dangerous when unstructured'] },
-            { id: 'article-8', title: 'Splitting front and back is not optional', image: 'assets/images/articles/placeholder.svg', excerpt: 'Splitting front and back is not optional', body: ['Splitting front and back is not optional'] },
-            { id: 'article-9', title: 'Web security is often considered too late', image: 'assets/images/articles/placeholder.svg', excerpt: 'Web security is often considered too late', body: ['Web security is often considered too late'] },
-            { id: 'article-10', title: 'A slow app costs more than you think', image: 'assets/images/articles/placeholder.svg', excerpt: 'A slow app costs more than you think', body: ['A slow app costs more than you think'] }
+            {
+                id: 'article-1',
+                title: 'Why so many IT projects fail before the first line of code',
+                image: 'assets/images/articles/projets informatiques echouent.png',
+                excerpt: 'Why so many IT projects fail before the first line of code',
+                category: 'Product governance',
+                date: '2025-12-10',
+                body: ['Many projects are weakened long before development starts.', 'Failure often begins during the initial framing phase.', 'Goals are vague, priorities unclear, and business constraints underestimated.', 'The real need is rarely expressed in an actionable way.', 'Technical choices come too early without a global vision or evolution scenarios.', 'Scope drifts without clear rules, creating conflicting expectations.', 'The project moves forward without stable direction.', 'Code becomes a constant attempt to adapt.', "It is not a skills issue but an upstream decision issue.", 'A well-framed project reduces risks before any code is written.']
+            },
+            {
+                id: 'article-2',
+                title: "The real problem in a project is almost never technical",
+                image: 'assets/images/articles/placeholder.svg',
+                excerpt: "The real problem in a project is almost never technical",
+                category: 'Project leadership',
+                date: '2025-11-15',
+                body: ["The real problem in a project is almost never technical"]
+            },
+            {
+                id: 'article-3',
+                title: 'What specifications systematically forget',
+                image: 'assets/images/articles/placeholder.svg',
+                excerpt: 'What specifications systematically forget',
+                category: 'Scoping',
+                date: '2025-10-02',
+                body: ['What specifications systematically forget']
+            },
+            {
+                id: 'article-4',
+                title: 'Non-technical decisions that sink an IT project',
+                image: 'assets/images/articles/placeholder.svg',
+                excerpt: 'Non-technical decisions that sink an IT project',
+                category: 'Management',
+                date: '2025-09-12',
+                body: ['Non-technical decisions that sink an IT project']
+            },
+            {
+                id: 'article-5',
+                title: 'Technical debt does not start in the code',
+                image: 'assets/images/articles/placeholder.svg',
+                excerpt: 'Technical debt does not start in the code',
+                category: 'Quality',
+                date: '2025-08-18',
+                body: ['Technical debt does not start in the code']
+            },
+            {
+                id: 'article-6',
+                title: 'PHP is not the problem, its usage is',
+                image: 'assets/images/articles/placeholder.svg',
+                excerpt: 'PHP is not the problem, its usage is',
+                category: 'Architecture',
+                date: '2025-07-05',
+                body: ['PHP is not the problem, its usage is']
+            },
+            {
+                id: 'article-7',
+                title: 'JavaScript becomes dangerous when unstructured',
+                image: 'assets/images/articles/placeholder.svg',
+                excerpt: 'JavaScript becomes dangerous when unstructured',
+                category: 'Front-end',
+                date: '2025-06-20',
+                body: ['JavaScript becomes dangerous when unstructured']
+            },
+            {
+                id: 'article-8',
+                title: 'Splitting front and back is not optional',
+                image: 'assets/images/articles/placeholder.svg',
+                excerpt: 'Splitting front and back is not optional',
+                category: 'Architecture',
+                date: '2025-05-10',
+                body: ['Splitting front and back is not optional']
+            },
+            {
+                id: 'article-9',
+                title: 'Web security is often considered too late',
+                image: 'assets/images/articles/placeholder.svg',
+                excerpt: 'Web security is often considered too late',
+                category: 'Security',
+                date: '2025-04-15',
+                body: ['Web security is often considered too late']
+            },
+            {
+                id: 'article-10',
+                title: 'A slow app costs more than you think',
+                image: 'assets/images/articles/placeholder.svg',
+                excerpt: 'A slow app costs more than you think',
+                category: 'Performance',
+                date: '2025-03-22',
+                body: ['A slow app costs more than you think']
+            }
         ],
         ui: {
             nav: { home: 'Home', about: 'About', experience: 'Experience', skills: 'Skills', projects: 'Projects', education: 'Education', articles: 'Articles', contact: 'Contact' },
@@ -213,7 +386,7 @@ function updateNavText(navLabels) {
         { selector: '.nav-link[href="#skills"]', text: navLabels.skills },
         { selector: '.nav-link[href="#projects"]', text: navLabels.projects },
         { selector: '.nav-link[href="#education"]', text: navLabels.education },
-        { selector: '.nav-link[href="#articles"]', text: navLabels.articles },
+        { selector: '.nav-link[href="#articles-page"]', text: navLabels.articles },
         { selector: '.nav-link[href="#contact"]', text: navLabels.contact }
     ];
     mapping.forEach(({ selector, text }) => {
@@ -230,6 +403,7 @@ function updateSectionTitles(sectionTexts) {
         { selector: '#projects .section-title', text: sectionTexts.projects },
         { selector: '#education .section-title', text: sectionTexts.education },
         { selector: '#articles .section-title', text: sectionTexts.articles },
+        { selector: '#articles-page .section-title', text: sectionTexts.articles },
         { selector: '#contact .section-title', text: sectionTexts.contact }
     ];
     mapping.forEach(({ selector, text }) => {

@@ -90,6 +90,7 @@ class PortfolioApp {
         initThemeToggle();
         applyLanguage(getCurrentLanguage());
         setTimeout(() => initScrollAnimations(), 100);
+        this.initRoutes();
         this.initEvents();
         this.initNavbar();
         this.initScrollToTop();
@@ -111,6 +112,30 @@ class PortfolioApp {
                 }, 300);
             }, 500);
         }
+    }
+
+    /**
+     * Initialise les routes SPA et gère la bascule vers la page Articles
+     */
+    initRoutes() {
+        const exitArticlesView = () => {
+            document.body.classList.remove('view-articles');
+        };
+
+        const enterArticlesView = () => {
+            document.body.classList.add('view-articles');
+            const section = document.getElementById('articles-page');
+            if (section) section.classList.remove('hidden');
+        };
+
+        ['#home', '#about', '#experience', '#skills', '#projects', '#education', '#contact'].forEach(path => {
+            router.register(path, exitArticlesView);
+        });
+
+        router.register('#articles-page', enterArticlesView);
+
+        // Rejouer le routing après l'enregistrement des callbacks pour gérer le hash courant
+        router.handleRouteChange();
     }
 
     /**
