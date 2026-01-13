@@ -21,7 +21,7 @@ const portfolioData = {
             github: 'https://github.com/claudemarjean',
             facebook: 'https://web.facebook.com/claude.marjean/',
             linkedIn: 'https://mg.linkedin.com/in/marjean-claude-andriamahatradraide-65873b246',
-            resume: 'https://drive.google.com/file/d/1qeqaymm_tZzq4mII60nRlG7_LoIM63df/view'
+            resume: 'https://drive.google.com/file/d/1BfVFq_7BdrepESi-xtb1nBBwQZX7fvQq/view?usp=sharing'
         },
         about: {
             paragraphs: [
@@ -43,14 +43,15 @@ const portfolioData = {
         ],
         skillsData: ['Angular','Bootstrap','CSS','Docker','Firebase','Flutter','Git','HTML','Javascript','MySQL','Next JS','Photoshop','PostgreSQL','Premiere Pro','Python','React','Tailwind','Typescript','Vue','Wordpress'],
         experiences: [
-            { id: 1, title: 'Directeur Adjoint au Développement', company: 'MANAO Logiciels', duration: '(Jan 2024 - Présent)', location: 'Madagascar', description: 'Direction et coordination des équipes de développement, gestion de projets stratégiques et innovation technologique.' },
-            { id: 2, title: 'Responsable Informatique', company: 'AFAMITA (alternance)', duration: '(Nov 2020 - Présent)', location: 'Madagascar', description: "Gestion du système d’information, des plateformes de transfert monétaire et du support technique." },
-            { id: 3, title: 'Webmaster/Développeur', company: 'AB Air Support (freelance)', duration: '(Mars 2025)', location: 'Remote', description: "Développement et déploiement d'une page vitrine professionnelle B2B." },
-            { id: 4, title: 'Auditeur en assistance du SI', company: '-', duration: '(Décembre 2024)', location: 'Madagascar', description: "Audit et évaluation des systèmes d'information." },
-            { id: 5, title: 'Webmaster/Développeur', company: 'ExtraToo (freelance)', duration: '(Juillet 2024 - Août 2024)', location: 'Remote', description: 'Maintenance et amélioration du site vitrine de produits Mactoo.' },
-            { id: 6, title: 'Chef de projet en développement', company: 'MANAO Logiciels', duration: '(Juillet 2023 - Janvier 2024)', location: 'Madagascar', description: 'Gestion et coordination de projets de développement logiciel.' },
-            { id: 7, title: 'Développeur Web Full Stack (PHP-JS)', company: 'MANAO Logiciels', duration: '(Avril 2022 - Juin 2023)', location: 'Madagascar', description: "Développement d'applications web complètes avec PHP et JavaScript." },
-            { id: 8, title: 'Stages professionnels significatifs', company: '-', duration: '', location: '', description: "Stages techniques et fonctionnels ayant permis l’acquisition de solides bases en développement logiciel, systèmes d’information et gestion de projets IT." }
+            { id: 1, title: 'Directeur du développement', company: 'MANAO Logiciels', duration: '(Jan 2026 - Présent)', location: 'Madagascar', description: 'Pilotage de la stratégie de développement, arbitrage technologique, supervision des architectures et accompagnement des équipes projets et techniques.' },
+            { id: 2, title: 'Directeur Adjoint au Développement', company: 'MANAO Logiciels', duration: '(Jan 2024 - Déc 2025)', location: 'Madagascar', description: 'Direction et coordination des équipes de développement, gestion de projets stratégiques et innovation technologique.' },
+            { id: 3, title: 'Responsable Informatique', company: 'AFAMITA (alternance)', duration: '(Nov 2020 - Présent)', location: 'Madagascar', description: "Gestion du système d’information, des plateformes de transfert monétaire et du support technique." },
+            { id: 4, title: 'Webmaster/Développeur', company: 'AB Air Support (freelance)', duration: '(Mars 2025)', location: 'Remote', description: "Développement et déploiement d'une page vitrine professionnelle B2B." },
+            { id: 5, title: 'Auditeur en assistance du SI', company: '-', duration: '(Décembre 2024)', location: 'Madagascar', description: "Audit et évaluation des systèmes d'information." },
+            { id: 6, title: 'Webmaster/Développeur', company: 'ExtraToo (freelance)', duration: '(Juillet 2024 - Août 2024)', location: 'Remote', description: 'Maintenance et amélioration du site vitrine de produits Mactoo.' },
+            { id: 7, title: 'Chef de projet en développement', company: 'MANAO Logiciels', duration: '(Juillet 2023 - Janvier 2024)', location: 'Madagascar', description: 'Gestion et coordination de projets de développement logiciel.' },
+            { id: 8, title: 'Développeur Web Full Stack (PHP-JS)', company: 'MANAO Logiciels', duration: '(Avril 2022 - Juin 2023)', location: 'Madagascar', description: "Développement d'applications web complètes avec PHP et JavaScript." },
+            { id: 9, title: 'Stages professionnels significatifs', company: '-', duration: '', location: '', description: "Stages techniques et fonctionnels ayant permis l’acquisition de solides bases en développement logiciel, systèmes d’information et gestion de projets IT." }
         ],
         educations: [
             { id: 1, title: 'Master 2', duration: '2021 - 2022', institution: "École Nationale D'Informatique", location: 'Madagascar', description: 'Master en Informatique avec spécialisation en développement logiciel' },
@@ -202,7 +203,7 @@ const portfolioData = {
             github: 'https://github.com/claudemarjean',
             facebook: 'https://web.facebook.com/claude.marjean/',
             linkedIn: 'https://mg.linkedin.com/in/marjean-claude-andriamahatradraide-65873b246',
-            resume: 'https://drive.google.com/file/d/1qeqaymm_tZzq4mII60nRlG7_LoIM63df/view'
+            resume: 'https://drive.google.com/file/d/1BfVFq_7BdrepESi-xtb1nBBwQZX7fvQq/view?usp=sharing'
         },
         about: {
             paragraphs: [
@@ -224,14 +225,15 @@ const portfolioData = {
         ],
         skillsData: ['Angular','Bootstrap','CSS','Docker','Firebase','Flutter','Git','HTML','Javascript','MySQL','Next JS','Photoshop','PostgreSQL','Premiere Pro','Python','React','Tailwind','Typescript','Vue','Wordpress'],
         experiences: [
-            { id: 1, title: 'Deputy Development Director', company: 'MANAO Logiciels', duration: '(Jan 2024 - Present)', location: 'Madagascar', description: 'Leading dev teams, steering strategic projects, and driving tech innovation.' },
-            { id: 2, title: 'IT Manager', company: 'AFAMITA (apprenticeship)', duration: '(Nov 2020 - Present)', location: 'Madagascar', description: 'Managing the information system, money transfer platforms, and technical support.' },
-            { id: 3, title: 'Webmaster/Developer', company: 'AB Air Support (freelance)', duration: '(Mar 2025)', location: 'Remote', description: 'Built and deployed a professional B2B showcase page.' },
-            { id: 4, title: 'IT Audit Support', company: '-', duration: '(Dec 2024)', location: 'Madagascar', description: 'Audited and assessed information systems.' },
-            { id: 5, title: 'Webmaster/Developer', company: 'ExtraToo (freelance)', duration: '(Jul 2024 - Aug 2024)', location: 'Remote', description: 'Maintained and improved the Mactoo product showcase site.' },
-            { id: 6, title: 'Development Project Lead', company: 'MANAO Logiciels', duration: '(Jul 2023 - Jan 2024)', location: 'Madagascar', description: 'Managed and coordinated software development projects.' },
-            { id: 7, title: 'Full Stack Web Developer (PHP-JS)', company: 'MANAO Logiciels', duration: '(Apr 2022 - Jun 2023)', location: 'Madagascar', description: 'Built complete web applications with PHP and JavaScript.' },
-            { id: 8, title: 'Significant Professional Internships', company: '-', duration: '', location: '', description: 'Technical and functional internships that built strong foundations in software development, information systems, and IT project management.' }
+            { id: 1, title: 'Director of Development', company: 'MANAO Logiciels', duration: '(Jan 2026 - Present)', location: 'Madagascar', description: 'Steers the development strategy, drives architectural decisions, ensures scalability, security, and performance, and mentors product and engineering teams.' },
+            { id: 2, title: 'Deputy Development Director', company: 'MANAO Logiciels', duration: '(Jan 2024 - Dec 2025)', location: 'Madagascar', description: 'Led dev teams, drove strategic projects, and innovation initiatives.' },
+            { id: 3, title: 'IT Manager', company: 'AFAMITA (apprenticeship)', duration: '(Nov 2020 - Present)', location: 'Madagascar', description: 'Managing the information system, money transfer platforms, and technical support.' },
+            { id: 4, title: 'Webmaster/Developer', company: 'AB Air Support (freelance)', duration: '(Mar 2025)', location: 'Remote', description: 'Built and deployed a professional B2B showcase page.' },
+            { id: 5, title: 'IT Audit Support', company: '-', duration: '(Dec 2024)', location: 'Madagascar', description: 'Audited and assessed information systems.' },
+            { id: 6, title: 'Webmaster/Developer', company: 'ExtraToo (freelance)', duration: '(Jul 2024 - Aug 2024)', location: 'Remote', description: 'Maintained and improved the Mactoo product showcase site.' },
+            { id: 7, title: 'Development Project Lead', company: 'MANAO Logiciels', duration: '(Jul 2023 - Jan 2024)', location: 'Madagascar', description: 'Managed and coordinated software development projects.' },
+            { id: 8, title: 'Full Stack Web Developer (PHP-JS)', company: 'MANAO Logiciels', duration: '(Apr 2022 - Jun 2023)', location: 'Madagascar', description: 'Built complete web applications with PHP and JavaScript.' },
+            { id: 9, title: 'Significant Professional Internships', company: '-', duration: '', location: '', description: 'Technical and functional internships that built strong foundations in software development, information systems, and IT project management.' }
         ],
         educations: [
             { id: 1, title: 'Master 2', duration: '2021 - 2022', institution: "École Nationale D'Informatique", location: 'Madagascar', description: 'Master in Computer Science, specialized in software development' },
