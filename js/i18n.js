@@ -203,7 +203,7 @@ const portfolioData = {
             github: 'https://github.com/claudemarjean',
             facebook: 'https://web.facebook.com/claude.marjean/',
             linkedIn: 'https://mg.linkedin.com/in/marjean-claude-andriamahatradraide-65873b246',
-            resume: 'https://drive.google.com/file/d/1qeqaymm_tZzq4mII60nRlG7_LoIM63df/view?usp=sharing'
+            resume: 'https://drive.google.com/file/d/1K-j9cRFQZBtzVseUs8rmpNELJz-HEBl5/view'
         },
         about: {
             paragraphs: [
