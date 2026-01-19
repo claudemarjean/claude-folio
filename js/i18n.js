@@ -91,75 +91,27 @@ const portfolioData = {
             },
             {
                 id: 'article-3',
-                title: 'Ce que les cahiers des charges oublient systématiquement',
-                image: 'assets/images/articles/placeholder.svg',
-                excerpt: 'Ce que les cahiers des charges oublient systématiquement',
+                title: 'Ce que les cahiers des charges devraient toujours contenir',
+                image: 'assets/images/articles/Ce que les cahiers des charges devraient toujours contenir.png',
+                excerpt: 'Ce que les cahiers des charges devraient toujours contenir',
                 category: 'Cadrage',
-                date: '2025-10-02',
-                body: ['Ce que les cahiers des charges oublient systématiquement']
-            },
-            {
-                id: 'article-4',
-                title: 'Les décisions non techniques qui sabotent un projet IT',
-                image: 'assets/images/articles/placeholder.svg',
-                excerpt: 'Les décisions non techniques qui sabotent un projet IT',
-                category: 'Management',
-                date: '2025-09-12',
-                body: ['Les décisions non techniques qui sabotent un projet IT']
-            },
-            {
-                id: 'article-5',
-                title: 'La dette technique ne commence pas dans le code',
-                image: 'assets/images/articles/placeholder.svg',
-                excerpt: 'La dette technique ne commence pas dans le code',
-                category: 'Qualité',
-                date: '2025-08-18',
-                body: ['La dette technique ne commence pas dans le code']
-            },
-            {
-                id: 'article-6',
-                title: "PHP n'est pas le problème, son utilisation l'est",
-                image: 'assets/images/articles/placeholder.svg',
-                excerpt: "PHP n'est pas le problème, son utilisation l'est",
-                category: 'Architecture',
-                date: '2025-07-05',
-                body: ["PHP n'est pas le problème, son utilisation l'est"]
-            },
-            {
-                id: 'article-7',
-                title: "JavaScript devient dangereux quand il n'est pas structuré",
-                image: 'assets/images/articles/placeholder.svg',
-                excerpt: "JavaScript devient dangereux quand il n'est pas structuré",
-                category: 'Front-end',
-                date: '2025-06-20',
-                body: ["JavaScript devient dangereux quand il n'est pas structuré"]
-            },
-            {
-                id: 'article-8',
-                title: "Séparer le front et le back n'est pas une option",
-                image: 'assets/images/articles/placeholder.svg',
-                excerpt: "Séparer le front et le back n'est pas une option",
-                category: 'Architecture',
-                date: '2025-05-10',
-                body: ["Séparer le front et le back n'est pas une option"]
-            },
-            {
-                id: 'article-9',
-                title: 'La sécurité web est souvent prise trop tard',
-                image: 'assets/images/articles/placeholder.svg',
-                excerpt: 'La sécurité web est souvent prise trop tard',
-                category: 'Sécurité',
-                date: '2025-04-15',
-                body: ['La sécurité web est souvent prise trop tard']
-            },
-            {
-                id: 'article-10',
-                title: "Une application lente coûte plus qu'on ne le pense",
-                image: 'assets/images/articles/placeholder.svg',
-                excerpt: "Une application lente coûte plus qu'on ne le pense",
-                category: 'Performance',
-                date: '2025-03-22',
-                body: ["Une application lente coûte plus qu'on ne le pense"]
+                date: '2026-01-20',
+                body: [
+                    'Un cahier des charges sert avant tout à créer une compréhension commune.',
+                    '- Dans de nombreux projets, il se limite à une liste de fonctionnalités.',
+                    '- Les objectifs réels, les contraintes et les priorités restent implicites.',
+                    '- Résultat : chacun interprète le document selon son propre point de vue.',
+                    '',
+                    'Un bon cahier des charges commence par le problème à résoudre, pas par la solution.',
+                    '- Il précise les objectifs attendus, les indicateurs de succès et les contraintes métier.',
+                    '- Il définit clairement le périmètre, les hypothèses et les dépendances.',
+                    "- Les règles d'évolution, de validation et d'arbitrage y ont aussi leur place.",
+                    '',
+                    'La technique peut alors être choisie en connaissance de cause.',
+                    '- Le projet gagne en lisibilité, en cohérence et en prévisibilité.',
+                    "- Un cahier des charges incomplet crée de l'incertitude dès le départ.",
+                    '- Un cahier des charges structuré devient un véritable outil de pilotage.'
+                ]
             }
         ],
         ui: {
@@ -251,84 +203,49 @@ const portfolioData = {
             },
             {
                 id: 'article-2',
-                title: "The real problem in a project is almost never technical",
-                image: 'assets/images/articles/placeholder.svg',
-                excerpt: "The real problem in a project is almost never technical",
+                title: 'What really gets an IT project started on the right foot',
+                image: 'assets/images/articles/demarrer-un-projet-ITsur-de-bonnes-bases.png',
+                excerpt: 'What really gets an IT project started on the right foot',
                 category: 'Project leadership',
-                date: '2025-11-15',
-                body: ["The real problem in a project is almost never technical"]
+                date: '2026-01-13',
+                body: [
+                    'An IT project starts first and foremost with a shared understanding.',
+                    'Everything begins with a clear definition of the problem to solve.',
+                    'Objectives must be understandable, measurable, and aligned among stakeholders.',
+                    'Business needs should be translated into concrete, prioritized requirements.',
+                    'A solid start relies on a defined and controlled scope.',
+                    'Constraints must be identified from the outset.',
+                    'Roles and responsibilities must be clearly established.',
+                    'Effective decisions are based on factual elements.',
+                    'Product vision guides technical choices.',
+                    'Technology serves as a tool in support of this vision.',
+                    'Structured framing facilitates arbitration and secures execution.',
+                    'It sustainably improves project quality.'
+                ]
             },
             {
                 id: 'article-3',
-                title: 'What specifications systematically forget',
-                image: 'assets/images/articles/placeholder.svg',
-                excerpt: 'What specifications systematically forget',
+                title: 'What specifications should always contain',
+                image: 'assets/images/articles/Ce que les cahiers des charges devraient toujours contenir.png',
+                excerpt: 'What specifications should always contain',
                 category: 'Scoping',
-                date: '2025-10-02',
-                body: ['What specifications systematically forget']
-            },
-            {
-                id: 'article-4',
-                title: 'Non-technical decisions that sink an IT project',
-                image: 'assets/images/articles/placeholder.svg',
-                excerpt: 'Non-technical decisions that sink an IT project',
-                category: 'Management',
-                date: '2025-09-12',
-                body: ['Non-technical decisions that sink an IT project']
-            },
-            {
-                id: 'article-5',
-                title: 'Technical debt does not start in the code',
-                image: 'assets/images/articles/placeholder.svg',
-                excerpt: 'Technical debt does not start in the code',
-                category: 'Quality',
-                date: '2025-08-18',
-                body: ['Technical debt does not start in the code']
-            },
-            {
-                id: 'article-6',
-                title: 'PHP is not the problem, its usage is',
-                image: 'assets/images/articles/placeholder.svg',
-                excerpt: 'PHP is not the problem, its usage is',
-                category: 'Architecture',
-                date: '2025-07-05',
-                body: ['PHP is not the problem, its usage is']
-            },
-            {
-                id: 'article-7',
-                title: 'JavaScript becomes dangerous when unstructured',
-                image: 'assets/images/articles/placeholder.svg',
-                excerpt: 'JavaScript becomes dangerous when unstructured',
-                category: 'Front-end',
-                date: '2025-06-20',
-                body: ['JavaScript becomes dangerous when unstructured']
-            },
-            {
-                id: 'article-8',
-                title: 'Splitting front and back is not optional',
-                image: 'assets/images/articles/placeholder.svg',
-                excerpt: 'Splitting front and back is not optional',
-                category: 'Architecture',
-                date: '2025-05-10',
-                body: ['Splitting front and back is not optional']
-            },
-            {
-                id: 'article-9',
-                title: 'Web security is often considered too late',
-                image: 'assets/images/articles/placeholder.svg',
-                excerpt: 'Web security is often considered too late',
-                category: 'Security',
-                date: '2025-04-15',
-                body: ['Web security is often considered too late']
-            },
-            {
-                id: 'article-10',
-                title: 'A slow app costs more than you think',
-                image: 'assets/images/articles/placeholder.svg',
-                excerpt: 'A slow app costs more than you think',
-                category: 'Performance',
-                date: '2025-03-22',
-                body: ['A slow app costs more than you think']
+                date: '2026-01-20',
+                body: [
+                    'A specification document serves primarily to create a common understanding.',
+                    '- In many projects, it is limited to a list of features.',
+                    '- Real objectives, constraints, and priorities remain implicit.',
+                    '- Result: everyone interprets the document from their own perspective.',
+                    '',
+                    'A good specification starts with the problem to solve, not the solution.',
+                    '- It specifies expected objectives, success indicators, and business constraints.',
+                    '- It clearly defines the scope, assumptions, and dependencies.',
+                    "- Evolution, validation, and arbitration rules also have their place.",
+                    '',
+                    'Technology can then be chosen with full knowledge.',
+                    '- The project gains clarity, consistency, and predictability.',
+                    '- An incomplete specification creates uncertainty from the start.',
+                    '- A structured specification becomes a real management tool.'
+                ]
             }
         ],
         ui: {
