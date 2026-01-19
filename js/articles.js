@@ -48,75 +48,26 @@ const articlesData = [
     },
     {
         id: 'article-3',
-        title: 'Ce que les cahiers des charges oublient systématiquement',
-        image: 'assets/images/articles/placeholder.svg',
-        excerpt: 'Ce que les cahiers des charges oublient systématiquement',
+        title: 'Ce que les cahiers des charges devraient toujours contenir',
+        image: 'assets/images/articles/Ce que les cahiers des charges devraient toujours contenir.png',
+        excerpt: 'Ce que les cahiers des charges devraient toujours contenir',
         category: 'Cadrage',
-        date: '2025-10-02',
-        body: ['Ce que les cahiers des charges oublient systématiquement']
-    },
-    {
-        id: 'article-4',
-        title: 'Les décisions non techniques qui sabotent un projet IT',
-        image: 'assets/images/articles/placeholder.svg',
-        excerpt: 'Les décisions non techniques qui sabotent un projet IT',
-        category: 'Management',
-        date: '2025-09-12',
-        body: ['Les décisions non techniques qui sabotent un projet IT']
-    },
-    {
-        id: 'article-5',
-        title: 'La dette technique ne commence pas dans le code',
-        image: 'assets/images/articles/placeholder.svg',
-        excerpt: 'La dette technique ne commence pas dans le code',
-        category: 'Qualité',
-        date: '2025-08-18',
-        body: ['La dette technique ne commence pas dans le code']
-    },
-    {
-        id: 'article-6',
-        title: 'PHP n\'est pas le problème, son utilisation l\'est',
-        image: 'assets/images/articles/placeholder.svg',
-        excerpt: 'PHP n\'est pas le problème, son utilisation l\'est',
-        category: 'Architecture',
-        date: '2025-07-05',
-        body: ['PHP n\'est pas le problème, son utilisation l\'est']
-    },
-    {
-        id: 'article-7',
-        title: 'JavaScript devient dangereux quand il n\'est pas structuré',
-        image: 'assets/images/articles/placeholder.svg',
-        excerpt: 'JavaScript devient dangereux quand il n\'est pas structuré',
-        category: 'Front-end',
-        date: '2025-06-20',
-        body: ['JavaScript devient dangereux quand il n\'est pas structuré']
-    },
-    {
-        id: 'article-8',
-        title: 'Séparer le front et le back n\'est pas une option',
-        image: 'assets/images/articles/placeholder.svg',
-        excerpt: 'Séparer le front et le back n\'est pas une option',
-        category: 'Architecture',
-        date: '2025-05-10',
-        body: ['Séparer le front et le back n\'est pas une option']
-    },
-    {
-        id: 'article-9',
-        title: 'La sécurité web est souvent prise trop tard',
-        image: 'assets/images/articles/placeholder.svg',
-        excerpt: 'La sécurité web est souvent prise trop tard',
-        category: 'Sécurité',
-        date: '2025-04-15',
-        body: ['La sécurité web est souvent prise trop tard']
-    },
-    {
-        id: 'article-10',
-        title: 'Une application lente coûte plus qu\'on ne le pense',
-        image: 'assets/images/articles/placeholder.svg',
-        excerpt: 'Une application lente coûte plus qu\'on ne le pense',
-        category: 'Performance',
-        date: '2025-03-22',
-        body: ['Une application lente coûte plus qu\'on ne le pense']
+        date: '2026-01-20',
+        body: [
+            'Un cahier des charges sert avant tout à créer une compréhension commune.',
+            '- Dans de nombreux projets, il se limite à une liste de fonctionnalités.',
+            '- Les objectifs réels, les contraintes et les priorités restent implicites.',
+            '- Résultat : chacun interprète le document selon son propre point de vue.',
+            '',
+            'Un bon cahier des charges commence par le problème à résoudre, pas par la solution.',
+            '- Il précise les objectifs attendus, les indicateurs de succès et les contraintes métier.',
+            '- Il définit clairement le périmètre, les hypothèses et les dépendances.',
+            "- Les règles d'évolution, de validation et d'arbitrage y ont aussi leur place.",
+            '',
+            'La technique peut alors être choisie en connaissance de cause.',
+            '- Le projet gagne en lisibilité, en cohérence et en prévisibilité.',
+            "- Un cahier des charges incomplet crée de l'incertitude dès le départ.",
+            '- Un cahier des charges structuré devient un véritable outil de pilotage.'
+        ]
     }
-   
 ];
