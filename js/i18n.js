@@ -112,6 +112,33 @@ const portfolioData = {
                     "- Un cahier des charges incomplet crée de l'incertitude dès le départ.",
                     '- Un cahier des charges structuré devient un véritable outil de pilotage.'
                 ]
+            },
+            {
+                id: 'article-4',
+                title: 'Les décisions non techniques qui influencent le succès d\'un projet',
+                image: 'assets/images/articles/Décisions_cles_hors_technique.png',
+                excerpt: 'Les décisions non techniques qui influencent le succès d\'un projet',
+                category: 'Gouvernance produit',
+                date: '2026-01-27',
+                body: [
+                    'La réussite d\'un projet ne dépend pas uniquement de la technologie.',
+                    '',
+                    '- Sur le terrain, les écarts apparaissent souvent avant même les choix techniques.',
+                    '- Les priorités sont parfois floues, les responsabilités mal définies et les arbitrages retardés.',
+                    '- Les contraintes métier, budgétaires ou organisationnelles sont sous-estimées.',
+                    '',
+                    '- Un projet progresse lorsque les objectifs sont clairs et partagés.',
+                    '- Lorsque les rôles sont définis et les décisions assumées.',
+                    '- Lorsque le périmètre est maîtrisé et les changements encadrés.',
+                    '- Lorsque la communication entre métiers et équipes techniques est continue.',
+                    '',
+                    '- La technique s\'adapte ensuite à ce cadre.',
+                    '- Sans ces décisions amont, même la meilleure architecture peine à tenir.',
+                    '',
+                    '- Le succès d\'un projet repose d\'abord sur la qualité des décisions non techniques.',
+                    '',
+                    '- Selon vous, laquelle de ces décisions est la plus déterminante dans un projet IT ?'
+                ]
             }
         ],
         ui: {
@@ -245,6 +272,33 @@ const portfolioData = {
                     '- The project gains clarity, consistency, and predictability.',
                     '- An incomplete specification creates uncertainty from the start.',
                     '- A structured specification becomes a real management tool.'
+                ]
+            },
+            {
+                id: 'article-4',
+                title: 'Non-technical decisions that influence project success',
+                image: 'assets/images/articles/Décisions_cles_hors_technique.png',
+                excerpt: 'Non-technical decisions that influence project success',
+                category: 'Product governance',
+                date: '2026-01-27',
+                body: [
+                    'Project success does not depend solely on technology.',
+                    '',
+                    '- In the field, gaps often appear even before technical choices.',
+                    '- Priorities are sometimes unclear, responsibilities poorly defined, and arbitrations delayed.',
+                    '- Business, budgetary, or organizational constraints are underestimated.',
+                    '',
+                    '- A project progresses when objectives are clear and shared.',
+                    '- When roles are defined and decisions are owned.',
+                    '- When scope is controlled and changes are managed.',
+                    '- When communication between business and technical teams is continuous.',
+                    '',
+                    '- Technology then adapts to this framework.',
+                    '- Without these upstream decisions, even the best architecture struggles to hold.',
+                    '',
+                    '- Project success is based first on the quality of non-technical decisions.',
+                    '',
+                    '- In your opinion, which of these decisions is the most critical in an IT project?'
                 ]
             }
         ],

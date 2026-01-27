@@ -352,12 +352,8 @@ function loadArticles(articles = []) {
         date: article.date || `2024-01-${String(index + 10).padStart(2, '0')}`
     }));
 
-    // Afficher seulement les articles 1 et 2 pour le moment
-    const allowedIds = ['article-1', 'article-2'];
-    const visibleArticles = normalized.filter(article => allowedIds.includes(article.id));
-
-    renderArticlesPreview(visibleArticles);
-    renderArticlesPage(visibleArticles);
+    renderArticlesPreview(normalized);
+    renderArticlesPage(normalized);
 }
 
 /**
