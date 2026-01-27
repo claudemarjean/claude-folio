@@ -69,5 +69,32 @@ const articlesData = [
             "- Un cahier des charges incomplet crée de l'incertitude dès le départ.",
             '- Un cahier des charges structuré devient un véritable outil de pilotage.'
         ]
+    },
+    {
+        id: 'article-4',
+        title: 'Les décisions non techniques qui influencent le succès d\'un projet',
+        image: 'assets/images/articles/Décisions_cles_hors_technique.png',
+        excerpt: 'Les décisions non techniques qui influencent le succès d\'un projet',
+        category: 'Gouvernance produit',
+        date: '2026-01-27',
+        body: [
+            'La réussite d'un projet ne dépend pas uniquement de la technologie.',
+            '',
+            '- Sur le terrain, les écarts apparaissent souvent avant même les choix techniques.',
+            '- Les priorités sont parfois floues, les responsabilités mal définies et les arbitrages retardés.',
+            '- Les contraintes métier, budgétaires ou organisationnelles sont sous-estimées.',
+            '',
+            '- Un projet progresse lorsque les objectifs sont clairs et partagés.',
+            '- Lorsque les rôles sont définis et les décisions assumées.',
+            '- Lorsque le périmètre est maîtrisé et les changements encadrés.',
+            '- Lorsque la communication entre métiers et équipes techniques est continue.',
+            '',
+            '- La technique s'adapte ensuite à ce cadre.',
+            '- Sans ces décisions amont, même la meilleure architecture peine à tenir.',
+            '',
+            '- Le succès d'un projet repose d'abord sur la qualité des décisions non techniques.',
+            '',
+            '- Selon vous, laquelle de ces décisions est la plus déterminante dans un projet IT ?'
+        ]
     }
 ];
