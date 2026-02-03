@@ -139,6 +139,32 @@ const portfolioData = {
                     '',
                     '- Selon vous, laquelle de ces décisions est la plus déterminante dans un projet IT ?'
                 ]
+            },
+            {
+                id: 'article-5',
+                title: 'Comprendre la dette technique avant qu\'elle ne devienne un problème',
+                image: 'assets/images/articles/dette-technique.png',
+                excerpt: 'Comprendre la dette technique avant qu\'elle ne devienne un problème',
+                category: 'Qualité logicielle',
+                date: '2026-02-02',
+                body: [
+                    'La dette technique n\'apparaît jamais par hasard.',
+                    '',
+                    'Elle s\'installe progressivement, souvent sous l\'effet de contraintes de délai ou de budget.',
+                    'Des choix rapides, des compromis temporaires et des contournements s\'accumulent.',
+                    'À court terme, le projet avance. À long terme, la complexité augmente.',
+                    '',
+                    'La dette technique n\'est pas uniquement du code mal écrit.',
+                    'Elle concerne aussi l\'architecture, la documentation, les tests et les décisions repoussées.',
+                    'Chaque ajout devient plus coûteux, chaque correction plus risquée.',
+                    '',
+                    'Comprendre cette dette permet de la piloter.',
+                    'Identifier ce qui peut être différé et ce qui doit être traité rapidement est essentiel.',
+                    'Le refactoring devient alors un investissement, pas une perte de temps.',
+                    '',
+                    'Ignorer la dette technique finit toujours par ralentir le projet.',
+                    'La maîtriser permet de préserver la qualité et la capacité d\'évolution.'
+                ]
             }
         ],
         ui: {
@@ -299,6 +325,32 @@ const portfolioData = {
                     '- Project success is based first on the quality of non-technical decisions.',
                     '',
                     '- In your opinion, which of these decisions is the most critical in an IT project?'
+                ]
+            },
+            {
+                id: 'article-5',
+                title: 'Understanding technical debt before it becomes a problem',
+                image: 'assets/images/articles/dette-technique.png',
+                excerpt: 'Understanding technical debt before it becomes a problem',
+                category: 'Software quality',
+                date: '2026-02-02',
+                body: [
+                    'Technical debt never appears by chance.',
+                    '',
+                    'It builds up gradually, often under the pressure of time or budget constraints.',
+                    'Quick decisions, temporary compromises, and workarounds accumulate.',
+                    'In the short term, the project moves forward. In the long term, complexity increases.',
+                    '',
+                    'Technical debt is not just poorly written code.',
+                    'It also concerns architecture, documentation, tests, and postponed decisions.',
+                    'Each addition becomes more expensive, each fix more risky.',
+                    '',
+                    'Understanding this debt allows you to manage it.',
+                    'Identifying what can be deferred and what must be addressed quickly is essential.',
+                    'Refactoring then becomes an investment, not a waste of time.',
+                    '',
+                    'Ignoring technical debt always ends up slowing down the project.',
+                    'Mastering it helps preserve quality and the capacity for evolution.'
                 ]
             }
         ],

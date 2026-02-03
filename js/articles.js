@@ -78,7 +78,7 @@ const articlesData = [
         category: 'Gouvernance produit',
         date: '2026-01-27',
         body: [
-            'La réussite d'un projet ne dépend pas uniquement de la technologie.',
+            'La réussite d\'un projet ne dépend pas uniquement de la technologie.',
             '',
             '- Sur le terrain, les écarts apparaissent souvent avant même les choix techniques.',
             '- Les priorités sont parfois floues, les responsabilités mal définies et les arbitrages retardés.',
@@ -89,12 +89,38 @@ const articlesData = [
             '- Lorsque le périmètre est maîtrisé et les changements encadrés.',
             '- Lorsque la communication entre métiers et équipes techniques est continue.',
             '',
-            '- La technique s'adapte ensuite à ce cadre.',
+            '- La technique s\'adapte ensuite à ce cadre.',
             '- Sans ces décisions amont, même la meilleure architecture peine à tenir.',
             '',
-            '- Le succès d'un projet repose d'abord sur la qualité des décisions non techniques.',
+            '- Le succès d\'un projet repose d\'abord sur la qualité des décisions non techniques.',
             '',
             '- Selon vous, laquelle de ces décisions est la plus déterminante dans un projet IT ?'
+        ]
+    },
+    {
+        id: 'article-5',
+        title: 'Comprendre la dette technique avant qu\'elle ne devienne un problème',
+        image: 'assets/images/articles/dette-technique.png',
+        excerpt: 'Comprendre la dette technique avant qu\'elle ne devienne un problème',
+        category: 'Qualité logicielle',
+        date: '2026-02-03',
+        body: [
+            'La dette technique n\'apparaît jamais par hasard.',
+            '',
+            'Elle s\'installe progressivement, souvent sous l\'effet de contraintes de délai ou de budget.',
+            'Des choix rapides, des compromis temporaires et des contournements s\'accumulent.',
+            'À court terme, le projet avance. À long terme, la complexité augmente.',
+            '',
+            'La dette technique n\'est pas uniquement du code mal écrit.',
+            'Elle concerne aussi l\'architecture, la documentation, les tests et les décisions repoussées.',
+            'Chaque ajout devient plus coûteux, chaque correction plus risquée.',
+            '',
+            'Comprendre cette dette permet de la piloter.',
+            'Identifier ce qui peut être différé et ce qui doit être traité rapidement est essentiel.',
+            'Le refactoring devient alors un investissement, pas une perte de temps.',
+            '',
+            'Ignorer la dette technique finit toujours par ralentir le projet.',
+            'La maîtriser permet de préserver la qualité et la capacité d\'évolution.'
         ]
     }
 ];
