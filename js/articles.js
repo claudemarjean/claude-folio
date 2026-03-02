@@ -232,5 +232,43 @@ const articlesData = [
             'Comprendre cette trajectoire permet de concevoir des systèmes cohérents aujourd\'hui,',
             'non pas en suivant une tendance, mais en s\'appuyant sur l\'expérience accumulée du web.'
         ]
+    },
+    {
+        id: 'article-9',
+        title: 'Intégrer la sécurité dès la conception d\'une application',
+        image: 'assets/images/articles/Sécurité dès la conception.png',
+        excerpt: 'Intégrer la sécurité dès la conception d\'une application',
+        category: 'Sécurité',
+        date: '2026-03-03',
+        body: [
+            '« Chef, la nouvelle application est prête ! Elle va hyper vite, le design est incroyable, on va tout casser !',
+            '— Super ! Et pour la sécurité, on est bons ?',
+            '— Ah... la sécurité... On va dire qu\'on rajoutera les freins en roulant, au prochain sprint ! »',
+            '',
+            'Ça vous fait sourire ? Pourtant, c\'est encore une réalité trop fréquente.',
+            '',
+            'La sécurité ne devrait jamais être une correction de fin de projet.',
+            '',
+            'Sur le terrain, elle est encore trop souvent traitée après le développement.',
+            'Audit tardif, correctifs urgents, dette de sécurité accumulée.',
+            'Le coût devient alors technique, financier et réputationnel.',
+            '',
+            'Intégrer la sécurité dès la conception change la trajectoire.',
+            'Cela commence par une analyse des risques adaptée au contexte métier.',
+            'Définir les flux sensibles, les niveaux d’accès, les surfaces d’exposition.',
+            'Appliquer le principe du moindre privilège et segmenter les responsabilités.',
+            '',
+            'La sécurité n\'est pas uniquement un pare-feu ou un outil.',
+            'Elle se matérialise dans l\'architecture :',
+            'gestion des identités, validation des entrées, chiffrement, journalisation, supervision.',
+            '',
+            'Plus elle est intégrée tôt, plus elle est simple et cohérente.',
+            'Ajoutée tardivement, elle devient complexe et fragile.',
+            '',
+            'Une application sécurisée n\'est pas celle qui n\'a jamais été attaquée.',
+            'C\'est celle qui a été pensée pour résister, détecter et réagir.',
+            '',
+            'La sécurité est une décision d\'architecture, pas un module optionnel.'
+        ]
     }
 ];

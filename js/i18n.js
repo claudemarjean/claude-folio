@@ -273,7 +273,46 @@ const portfolioData = {
                     '',
                     'Comprendre cette trajectoire permet de concevoir des systèmes cohérents aujourd\'hui,',
                     'non pas en suivant une tendance, mais en s\'appuyant sur l\'expérience accumulée du web.'
-                ]            }
+                ]
+            },
+            {
+                id: 'article-9',
+                title: 'Intégrer la sécurité dès la conception d\'une application',
+                image: 'assets/images/articles/Sécurité dès la conception.png',
+                excerpt: 'Intégrer la sécurité dès la conception d\'une application',
+                category: 'Sécurité',
+                date: '2026-03-03',
+                body: [
+                    '« Chef, la nouvelle application est prête ! Elle va hyper vite, le design est incroyable, on va tout casser !',
+                    '— Super ! Et pour la sécurité, on est bons ?',
+                    '— Ah... la sécurité... On va dire qu\'on rajoutera les freins en roulant, au prochain sprint ! »',
+                    '',
+                    'Ça vous fait sourire ? Pourtant, c\'est encore une réalité trop fréquente.',
+                    '',
+                    'La sécurité ne devrait jamais être une correction de fin de projet.',
+                    '',
+                    'Sur le terrain, elle est encore trop souvent traitée après le développement.',
+                    'Audit tardif, correctifs urgents, dette de sécurité accumulée.',
+                    'Le coût devient alors technique, financier et réputationnel.',
+                    '',
+                    'Intégrer la sécurité dès la conception change la trajectoire.',
+                    'Cela commence par une analyse des risques adaptée au contexte métier.',
+                    'Définir les flux sensibles, les niveaux d’accès, les surfaces d’exposition.',
+                    'Appliquer le principe du moindre privilège et segmenter les responsabilités.',
+                    '',
+                    'La sécurité n\'est pas uniquement un pare-feu ou un outil.',
+                    'Elle se matérialise dans l\'architecture :',
+                    'gestion des identités, validation des entrées, chiffrement, journalisation, supervision.',
+                    '',
+                    'Plus elle est intégrée tôt, plus elle est simple et cohérente.',
+                    'Ajoutée tardivement, elle devient complexe et fragile.',
+                    '',
+                    'Une application sécurisée n\'est pas celle qui n\'a jamais été attaquée.',
+                    'C\'est celle qui a été pensée pour résister, détecter et réagir.',
+                    '',
+                    'La sécurité est une décision d\'architecture, pas un module optionnel.'
+                ]
+            }
         ],
         ui: {
             nav: { home: 'Accueil', about: 'À propos', experience: 'Expérience', skills: 'Compétences', projects: 'Projets', education: 'Formation', articles: 'Articles', contact: 'Contact' },
@@ -569,6 +608,44 @@ const portfolioData = {
                     '',
                     'Understanding this trajectory allows us to design coherent systems today,',
                     'not by following a trend, but by building on the accumulated experience of the web.'
+                ]
+            },
+            {
+                id: 'article-9',
+                title: 'Integrating security from the design phase of an application',
+                image: 'assets/images/articles/Sécurité dès la conception.png',
+                excerpt: 'Integrating security from the design phase of an application',
+                category: 'Security',
+                date: '2026-03-03',
+                body: [
+                    '“Boss, the new app is ready! It\'s super fast, the design is amazing, we\'re going to crush it!',
+                    '— Great! And what about security, are we good?',
+                    '— Ah... security... Let\'s say we\'ll add the brakes while driving, in the next sprint!”',
+                    '',
+                    'Does that make you smile? Yet, it\'s still a reality too often.',
+                    '',
+                    'Security should never be an end-of-project fix.',
+                    '',
+                    'In practice, it is still too often addressed after development.',
+                    'Late audits, urgent fixes, accumulated security debt.',
+                    'The cost then becomes technical, financial and reputational.',
+                    '',
+                    'Integrating security from the design phase changes the trajectory.',
+                    'It starts with a risk analysis adapted to the business context.',
+                    'Define sensitive flows, access levels, exposure surfaces.',
+                    'Apply the principle of least privilege and segment responsibilities.',
+                    '',
+                    'Security is not just a firewall or a tool.',
+                    'It materializes in the architecture:',
+                    'identity management, input validation, encryption, logging, monitoring.',
+                    '',
+                    'The earlier it is integrated, the simpler and more consistent it is.',
+                    'Added late, it becomes complex and fragile.',
+                    '',
+                    'A secure application is not one that has never been attacked.',
+                    'It is one that has been designed to resist, detect and respond.',
+                    '',
+                    'Security is an architectural decision, not an optional module.'
                 ]
             }
         ],
