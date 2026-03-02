@@ -165,6 +165,33 @@ const portfolioData = {
                     'Ignorer la dette technique finit toujours par ralentir le projet.',
                     'La maîtriser permet de préserver la qualité et la capacité d\'évolution.'
                 ]
+            },
+            {
+                id: 'article-6',
+                title: 'Front-end moderne : performance, UX et frameworks orientés production',
+                image: 'assets/images/articles/Frontend-Moderne.jpg',
+                excerpt: 'Front-end moderne : performance, UX et frameworks orientés production',
+                category: 'Performance front-end',
+                date: '2026-02-10',
+                body: [
+                    'Le front-end ne se limite plus à afficher une interface.',
+                    '',
+                    'Sur de nombreux projets, les difficultés apparaissent après la mise en ligne.',
+                    'Temps de chargement instables, interactions peu fluides, dette JavaScript croissante.',
+                    'La complexité ne vient pas du design, mais des choix techniques initiaux.',
+                    '',
+                    'Les frameworks modernes répondent à ces enjeux en plaçant la production au centre.',
+                    'Rendu côté serveur, génération statique, gestion fine de l\'hydratation.',
+                    'Moins de JavaScript inutile, plus de performance perçue.',
+                    'Une meilleure maîtrise des Core Web Vitals et de l\'expérience utilisateur réelle.',
+                    '',
+                    'Un front-end efficace s\'appuie sur des décisions mesurables.',
+                    'Choisir un framework, c\'est d\'abord choisir un mode de rendu et une stratégie de performance.',
+                    'L\'UX devient alors une conséquence directe de l\'architecture.',
+                    '',
+                    'Aujourd\'hui, le front-end est un sujet d\'ingénierie autant que d\'interface.',
+                    'Les projets durables sont ceux qui traitent la performance comme une exigence de départ.'
+                ]
             }
         ],
         ui: {
@@ -351,6 +378,33 @@ const portfolioData = {
                     '',
                     'Ignoring technical debt always ends up slowing down the project.',
                     'Mastering it helps preserve quality and the capacity for evolution.'
+                ]
+            },
+            {
+                id: 'article-6',
+                title: 'Modern front-end: performance, UX and production-oriented frameworks',
+                image: 'assets/images/articles/Frontend-Moderne.jpg',
+                excerpt: 'Modern front-end: performance, UX and production-oriented frameworks',
+                category: 'Front-end performance',
+                date: '2026-02-10',
+                body: [
+                    'Front-end is no longer just about displaying an interface.',
+                    '',
+                    'On many projects, difficulties appear after going live.',
+                    'Unstable loading times, sluggish interactions, growing JavaScript debt.',
+                    'Complexity does not come from design, but from initial technical choices.',
+                    '',
+                    'Modern frameworks address these challenges by placing production at the center.',
+                    'Server-side rendering, static generation, fine-grained hydration management.',
+                    'Less unnecessary JavaScript, more perceived performance.',
+                    'Better control of Core Web Vitals and real user experience.',
+                    '',
+                    'An effective front-end relies on measurable decisions.',
+                    'Choosing a framework means first choosing a rendering mode and a performance strategy.',
+                    'UX then becomes a direct consequence of the architecture.',
+                    '',
+                    'Today, front-end is as much an engineering topic as it is an interface one.',
+                    'Sustainable projects are those that treat performance as a starting requirement.'
                 ]
             }
         ],
