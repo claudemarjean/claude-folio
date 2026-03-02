@@ -559,6 +559,7 @@ table {
     overflow: hidden;
     width: 100%;
     max-width: 100%;
+    position: relative;
 }
 
 @media (max-width: 768px) {
@@ -697,6 +698,237 @@ table {
     bottom: -20px;
     border: 3px solid var(--color-primary);
     border-radius: var(--radius-xl);
+    z-index: 1;
+}
+
+/* Hero Background Animations - Thème Développement */
+.hero-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: 0;
+    pointer-events: none;
+}
+
+/* Grille technologique */
+.tech-grid {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: 
+        linear-gradient(rgba(14, 165, 233, 0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(14, 165, 233, 0.03) 1px, transparent 1px);
+    background-size: 50px 50px;
+    animation: gridMove 20s linear infinite;
+    opacity: 0.5;
+}
+
+@keyframes gridMove {
+    0% { transform: translate(0, 0); }
+    100% { transform: translate(50px, 50px); }
+}
+
+/* Lignes de code animées */
+.code-lines {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.code-line {
+    position: absolute;
+    left: -100%;
+    font-family: 'Courier New', monospace;
+    font-size: 0.9rem;
+    color: var(--color-primary);
+    opacity: 0.15;
+    white-space: nowrap;
+    animation: codeSlide var(--duration, 20s) linear infinite;
+    animation-delay: var(--delay, 0s);
+}
+
+.code-line:nth-child(1) { top: 15%; }
+.code-line:nth-child(2) { top: 35%; }
+.code-line:nth-child(3) { top: 55%; }
+.code-line:nth-child(4) { top: 75%; }
+.code-line:nth-child(5) { top: 25%; }
+.code-line:nth-child(6) { top: 65%; }
+
+.code-keyword { color: var(--color-secondary); opacity: 0.8; }
+.code-variable { color: var(--color-primary); opacity: 0.9; }
+.code-function { color: #8b5cf6; opacity: 0.85; }
+.code-string { color: #ec4899; opacity: 0.8; }
+.code-class { color: #f59e0b; opacity: 0.85; }
+
+@keyframes codeSlide {
+    0% { left: -100%; opacity: 0; }
+    10% { opacity: 0.15; }
+    90% { opacity: 0.15; }
+    100% { left: 120%; opacity: 0; }
+}
+
+/* Symboles flottants */
+.floating-symbols {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.symbol {
+    position: absolute;
+    font-family: 'Courier New', monospace;
+    font-size: clamp(1.5rem, 3vw, 3rem);
+    font-weight: bold;
+    color: var(--color-primary);
+    opacity: 0.08;
+    left: var(--x, 50%);
+    top: var(--y, 50%);
+    animation: floatSymbol 15s ease-in-out infinite, symbolPulse 3s ease-in-out infinite;
+    animation-delay: var(--delay, 0s);
+}
+
+@keyframes floatSymbol {
+    0%, 100% { transform: translate(0, 0) rotate(0deg); }
+    25% { transform: translate(30px, -30px) rotate(10deg); }
+    50% { transform: translate(-20px, 20px) rotate(-10deg); }
+    75% { transform: translate(20px, 10px) rotate(5deg); }
+}
+
+@keyframes symbolPulse {
+    0%, 100% { opacity: 0.08; transform: scale(1); }
+    50% { opacity: 0.15; transform: scale(1.1); }
+}
+
+/* Effet matrice */
+.matrix-rain {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-around;
+}
+
+.matrix-column {
+    font-family: 'Courier New', monospace;
+    font-size: 1rem;
+    color: var(--color-secondary);
+    opacity: 0;
+    animation: matrixFall var(--duration, 10s) linear infinite;
+    animation-delay: var(--delay, 0s);
+    letter-spacing: 0.1em;
+    writing-mode: vertical-rl;
+    white-space: nowrap;
+}
+
+@keyframes matrixFall {
+    0% { transform: translateY(-100%); opacity: 0; }
+    10% { opacity: 0.2; }
+    90% { opacity: 0.2; }
+    100% { transform: translateY(100vh); opacity: 0; }
+}
+
+/* Particules technologiques */
+.tech-particles {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.particle {
+    position: absolute;
+    width: 4px;
+    height: 4px;
+    background: var(--color-primary);
+    border-radius: 50%;
+    left: var(--x, 50%);
+    top: var(--y, 50%);
+    box-shadow: 0 0 10px var(--color-primary);
+    animation: particleFloat 20s ease-in-out infinite, particleBlink 2s ease-in-out infinite;
+}
+
+.particle:nth-child(2n) {
+    background: var(--color-secondary);
+    box-shadow: 0 0 10px var(--color-secondary);
+    animation-duration: 25s, 3s;
+}
+
+.particle:nth-child(3n) {
+    width: 6px;
+    height: 6px;
+    animation-duration: 18s, 2.5s;
+}
+
+@keyframes particleFloat {
+    0%, 100% { transform: translate(0, 0); }
+    25% { transform: translate(100px, -80px); }
+    50% { transform: translate(-50px, 60px); }
+    75% { transform: translate(80px, 40px); }
+}
+
+@keyframes particleBlink {
+    0%, 100% { opacity: 0.2; }
+    50% { opacity: 0.8; }
+}
+
+/* Circuits animés */
+.circuit-pattern {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0.1;
+}
+
+.circuit-line {
+    stroke-dasharray: 400;
+    stroke-dashoffset: 400;
+    animation: drawCircuit 8s linear infinite;
+}
+
+.circuit-line.circuit-1 {
+    animation-delay: 0s;
+}
+
+.circuit-line.circuit-2 {
+    animation-delay: 2s;
+}
+
+@keyframes drawCircuit {
+    0% { stroke-dashoffset: 400; }
+    50% { stroke-dashoffset: 0; }
+    100% { stroke-dashoffset: -400; }
+}
+
+.circuit-node {
+    animation: nodePulse 2s ease-in-out infinite;
+}
+
+.circuit-node.node-1 { animation-delay: 0s; }
+.circuit-node.node-2 { animation-delay: 0.5s; }
+.circuit-node.node-3 { animation-delay: 1s; }
+
+@keyframes nodePulse {
+    0%, 100% { opacity: 0.3; r: 4; }
+    50% { opacity: 0.8; r: 6; }
+}
+
+/* S'assurer que le contenu du hero est au-dessus du background */
+.hero-section .container {
+    position: relative;
     z-index: 1;
 }
 
@@ -2412,5 +2644,79 @@ body.view-articles #contact {
 
     .article-detail-image-wrapper img {
         height: 150px;
+    }
+}
+
+/* ==================== ANIMATIONS ADAPTÉES AU THÈME CLAIR ==================== */
+[data-theme="light"] .tech-grid {
+    background-image: 
+        linear-gradient(rgba(14, 165, 233, 0.08) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(14, 165, 233, 0.08) 1px, transparent 1px);
+    opacity: 0.6;
+}
+
+[data-theme="light"] .code-line {
+    opacity: 0.2;
+}
+
+[data-theme="light"] .symbol {
+    opacity: 0.12;
+}
+
+[data-theme="light"] .matrix-column {
+    color: var(--color-primary);
+}
+
+[data-theme="light"] .particle {
+    box-shadow: 0 0 8px var(--color-primary);
+}
+
+[data-theme="light"] .particle:nth-child(2n) {
+    box-shadow: 0 0 8px var(--color-secondary);
+}
+
+[data-theme="light"] .circuit-pattern {
+    opacity: 0.15;
+}
+
+/* ==================== ACCESSIBILITÉ - MOUVEMENT RÉDUIT ==================== */
+@media (prefers-reduced-motion: reduce) {
+    .tech-grid,
+    .code-line,
+    .symbol,
+    .matrix-column,
+    .particle,
+    .circuit-line,
+    .circuit-node {
+        animation: none !important;
+    }
+    
+    .hero-content,
+    .hero-image {
+        animation: none !important;
+    }
+    
+    * {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}
+
+/* Responsive - Masquer certaines animations sur mobile */
+@media (max-width: 768px) {
+    .code-line:nth-child(n+4),
+    .symbol:nth-child(n+6),
+    .matrix-column:nth-child(n+3),
+    .particle:nth-child(n+5) {
+        display: none;
+    }
+    
+    .code-line {
+        font-size: 0.7rem;
+    }
+    
+    .symbol {
+        font-size: 1.5rem;
     }
 }
