@@ -149,5 +149,33 @@ const articlesData = [
             'Aujourd\'hui, le front-end est un sujet d\'ingénierie autant que d\'interface.',
             'Les projets durables sont ceux qui traitent la performance comme une exigence de départ.'
         ]
+    },
+    {
+        id: 'article-7',
+        title: 'Backend moderne : robustesse, scalabilité et architecture orientée production',
+        image: 'assets/images/articles/Backend-moderne.jpg',
+        excerpt: 'Backend moderne : robustesse, scalabilité et architecture orientée production',
+        category: 'Architecture backend',
+        date: '2026-02-17',
+        body: [
+            'Un backend efficace ne se juge pas à la complexité de son architecture.',
+            '',
+            'Sur le terrain, beaucoup d\'applications fonctionnent en environnement de test, mais montrent leurs limites en production.',
+            'Temps de réponse irréguliers, endpoints mal structurés, montée en charge imprévue.',
+            'La difficulté ne vient pas du langage choisi, mais de la manière dont le système a été pensé.',
+            '',
+            'Un backend moderne repose d\'abord sur des API claires et cohérentes.',
+            'Contrats bien définis, gestion explicite des erreurs, versionnement maîtrisé.',
+            'La scalabilité n\'est pas un ajout tardif, mais une contrainte intégrée dès la conception.',
+            '',
+            'L\'architecture doit rester lisible.',
+            'Monolithe modulaire, microservices ou serverless : le choix dépend du contexte, pas de la tendance.',
+            'Ce qui compte, c\'est la capacité à observer, mesurer et ajuster en production.',
+            '',
+            'Un backend orienté production privilégie la robustesse, la performance mesurable et la simplicité maîtrisée.',
+            'La sophistication inutile devient rapidement une dette.',
+            '',
+            'Un système backend réussi est celui qui reste stable lorsque l\'usage réel commence.'
+        ]
     }
 ];
