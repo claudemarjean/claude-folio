@@ -270,5 +270,47 @@ const articlesData = [
             '',
             'La sécurité est une décision d\'architecture, pas un module optionnel.'
         ]
+    },
+    {
+        id: 'article-10',
+        title: 'Monolithe ou microservices : choisir selon le contexte',
+        image: 'assets/images/articles/Monolithe ou microservices  choisir selon le contexte.png',
+        excerpt: 'Monolithe ou microservices : choisir selon le contexte',
+        category: 'Architecture logicielle',
+        date: '2026-03-10',
+        body: [
+            '"On part sur des microservices, c\'est plus moderne !"',
+            '6 mois plus tard : "Quelqu\'un sait pourquoi le service A n\'arrive plus à parler au service B, et où est passé mon log de transaction ?"',
+            'Le mimétisme architectural fait des ravages. Il est temps d\'en parler.',
+            '',
+            'Le débat monolithe contre microservices est souvent mal posé.',
+            '',
+            'Sur le terrain, beaucoup de projets choisissent une architecture sans tenir compte du contexte réel.',
+            'Le mot microservices arrive souvent avant l\'analyse des besoins.',
+            '',
+            'Un monolithe bien structuré est souvent pertinent quand :',
+            '- une équipe de 2 à 6 développeurs',
+            '- un produit encore en construction',
+            '- des évolutions fonctionnelles fréquentes',
+            '- une exploitation simple à assurer',
+            'Résultat : moins d\'infrastructure, moins d\'opérations, plus de vitesse.',
+            '',
+            'Les microservices deviennent pertinents dans d\'autres situations :',
+            '- plus de 15 à 20 développeurs',
+            '- plusieurs équipes autonomes',
+            '- des domaines métier clairement séparés',
+            '- des besoins de montée en charge indépendants',
+            'Mais ils introduisent des coûts réels :',
+            'déploiements multiples, supervision distribuée, gestion des incidents plus complexe.',
+            '',
+            'Le choix dépend de facteurs concrets.',
+            'Taille de l\'équipe, maturité technique, fréquence des changements, contraintes métier.',
+            'Une architecture efficace est celle que l\'organisation peut réellement maîtriser.',
+            '',
+            'Commencer simple n\'est pas une faiblesse.',
+            'Évoluer vers plus de découplage peut être une décision stratégique, pas une obligation.',
+            '',
+            'L\'architecture doit servir le produit, pas l\'inverse.'
+        ]
     }
 ];
