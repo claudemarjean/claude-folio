@@ -159,20 +159,20 @@ const experiences = [
         description: "Pilotage de la stratégie de développement, arbitrage technologique, supervision des architectures et accompagnement des équipes projets et techniques."
     },
     {
+        id: 3,
+        title: 'Responsable Informatique',
+        company: 'AFAMITA(Prestation de services)',
+        duration: '(Nov 2020 - Présent)',
+        location: 'Madagascar',
+        description: "Gestion du système d’information, des plateformes de transfert monétaire et du support technique."
+    },
+    {
         id: 2,
         title: 'Directeur Adjoint au Développement',
         company: 'MANAO Logiciels',
         duration: '(Jan 2024 - Déc 2025)',
         location: 'Madagascar',
         description: "Direction et coordination des équipes de développement, gestion de projets stratégiques et innovation technologique."
-    },
-    {
-        id: 3,
-        title: 'Responsable Informatique',
-            company: 'AFAMITA(Prestation de services)',
-        duration: '(Nov 2020 - Présent)',
-        location: 'Madagascar',
-        description: "Gestion du système d’information, des plateformes de transfert monétaire et du support technique."
     },
     {
         id: 4,
