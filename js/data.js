@@ -17,7 +17,7 @@ const personalData = {
     linkedIn: 'https://mg.linkedin.com/in/marjean-claude-andriamahatradraide-65873b246',
     stackOverflow: '',
     devUsername: "C109",
-    resume: "https://drive.google.com/file/d/1K-j9cRFQZBtzVseUs8rmpNELJz-HEBl5/view"
+    resume: "https://drive.google.com/file/d/14y4Tytp6A0QEQNrrrwfO1MQaX5Mh9MYn/view"
 };
 
 // Projets
