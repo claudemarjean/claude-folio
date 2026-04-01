@@ -169,7 +169,7 @@ const experiences = [
     {
         id: 3,
         title: 'Responsable Informatique',
-        company: 'AFAMITA (alternance)',
+            company: 'AFAMITA(Prestation de services)',
         duration: '(Nov 2020 - Présent)',
         location: 'Madagascar',
         description: "Gestion du système d’information, des plateformes de transfert monétaire et du support technique."

@@ -45,7 +45,7 @@ const portfolioData = {
         experiences: [
             { id: 1, title: 'Directeur du développement', company: 'MANAO Logiciels', duration: '(Jan 2026 - Présent)', location: 'Madagascar', description: 'Pilotage de la stratégie de développement, arbitrage technologique, supervision des architectures et accompagnement des équipes projets et techniques.' },
             { id: 2, title: 'Directeur Adjoint au Développement', company: 'MANAO Logiciels', duration: '(Jan 2024 - Déc 2025)', location: 'Madagascar', description: 'Direction et coordination des équipes de développement, gestion de projets stratégiques et innovation technologique.' },
-            { id: 3, title: 'Responsable Informatique', company: 'AFAMITA (alternance)', duration: '(Nov 2020 - Présent)', location: 'Madagascar', description: "Gestion du système d’information, des plateformes de transfert monétaire et du support technique." },
+            { id: 3, title: 'Responsable Informatique', company: 'AFAMITA(Prestation de services)', duration: '(Nov 2020 - Présent)', location: 'Madagascar', description: "Gestion du système d’information, des plateformes de transfert monétaire et du support technique." },
             { id: 4, title: 'Webmaster/Développeur', company: 'AB Air Support (freelance)', duration: '(Mars 2025)', location: 'Remote', description: "Développement et déploiement d'une page vitrine professionnelle B2B." },
             { id: 5, title: 'Auditeur en assistance du SI', company: '-', duration: '(Décembre 2024)', location: 'Madagascar', description: "Audit et évaluation des systèmes d'information." },
             { id: 6, title: 'Webmaster/Développeur', company: 'ExtraToo (freelance)', duration: '(Juillet 2024 - Août 2024)', location: 'Remote', description: 'Maintenance et amélioration du site vitrine de produits Mactoo.' },
@@ -421,7 +421,7 @@ const portfolioData = {
         experiences: [
             { id: 1, title: 'Director of Development', company: 'MANAO Logiciels', duration: '(Jan 2026 - Present)', location: 'Madagascar', description: 'Steers the development strategy, drives architectural decisions, ensures scalability, security, and performance, and mentors product and engineering teams.' },
             { id: 2, title: 'Deputy Development Director', company: 'MANAO Logiciels', duration: '(Jan 2024 - Dec 2025)', location: 'Madagascar', description: 'Led dev teams, drove strategic projects, and innovation initiatives.' },
-            { id: 3, title: 'IT Manager', company: 'AFAMITA (apprenticeship)', duration: '(Nov 2020 - Present)', location: 'Madagascar', description: 'Managing the information system, money transfer platforms, and technical support.' },
+            { id: 3, title: 'IT Manager', company: 'AFAMITA (Service Provision)', duration: '(Nov 2020 - Present)', location: 'Madagascar', description: 'Managing the information system, money transfer platforms, and technical support.' },
             { id: 4, title: 'Webmaster/Developer', company: 'AB Air Support (freelance)', duration: '(Mar 2025)', location: 'Remote', description: 'Built and deployed a professional B2B showcase page.' },
             { id: 5, title: 'IT Audit Support', company: '-', duration: '(Dec 2024)', location: 'Madagascar', description: 'Audited and assessed information systems.' },
             { id: 6, title: 'Webmaster/Developer', company: 'ExtraToo (freelance)', duration: '(Jul 2024 - Aug 2024)', location: 'Remote', description: 'Maintained and improved the Mactoo product showcase site.' },
